@@ -1,0 +1,73 @@
+﻿@model IEnumerable<MAPWEBAPP.Models.AdminULBDetails>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ULBId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ULBName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ParentULB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalHouse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalHouseScan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalSeg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalMix)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalNotReceived)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ULBId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ULBName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentULB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalHouse)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalHouseScan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalSeg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalMix)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalNotReceived)
+            </td>
+          
+        </tr>
+}
+    </tbody>
+</table>

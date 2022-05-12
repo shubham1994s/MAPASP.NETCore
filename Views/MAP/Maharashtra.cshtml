@@ -1,0 +1,215 @@
+﻿
+@model IEnumerable<MAPWEBAPP.Models.SP_MAPS_DETAILS>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Maharashtra Map</title>
+    @*<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>*@
+   
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="~/js/jquery.maphilight.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @*<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+        <script type='text/javascript' src='http://midnightshealing.poweredhub.com/wp-includes/js/jquery/jquery.js?ver=1.11.0'></script>*@
+    @*<script type="text/javascript" src="~/js/jquery.min.js"></script>*@
+
+    @*<script src="~/scripts/jquery-3.3.1.min.js"></script>
+        <script src="~/scripts/popper.min.js"></script>
+        <script src="~/scripts/bootstrap.min.js"></script>
+        <link href="~/Content/dataTables.bootstrap4.min.css" rel="stylesheet" />
+        <script src="~/scripts/jquery.dataTables.min.js"></script>
+        <script src="~/scripts/dataTables.bootstrap4.min.js"></script>*@
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            //   $('#DataTable').DataTable();
+            // debugger;
+            var previousText = null;
+            var set_data = '';
+            $('[data-toggle="popover"]').popover({
+                title: setData,
+                html: true,
+                container: 'body',
+
+            });
+            function setData(id) {
+                // debugger;
+                var element = $(this);
+                var id = element.attr("id");
+                var currentText = element.attr("id");
+                if (previousText != currentText) {
+                    $.ajax({
+                        url: "/MAP/Loaddata?DistrictId=" + id,
+                        method: "post",
+                        dataType: 'json',
+                        async: false,
+                        data: { id: id },
+                        success: function (data) {
+                            //  debugger;
+                            set_data = data;
+
+                        }
+                    });
+
+                }
+                previousText = currentText;
+                return set_data;
+
+            }
+
+        }
+        );
+
+
+    </script>
+    <script>
+        $(function () {
+            $('.mapq').maphilight();
+        });
+    
+    </script>
+    <style type="text/css">
+        .border-dark1 {
+            border-color: #c2c2c2;
+        }
+
+        .head-color {
+            background: #065d96;
+            color: white;
+        }
+
+        .list-group-item {
+            padding: .5rem 1.25rem;
+        }
+
+        .count-color {
+            background: #e8e8e8;
+        }
+
+        body {
+            background: #fff;
+            ;
+        }
+
+        .bg-footer {
+            background: #0d3845;
+        }
+
+        .bg-black {
+            background: #000
+        }
+
+        .popover-header {
+            font-size: 75%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="d-flex">
+        <!-- Count List -->
+
+        <div class="mr-5">
+            <div class="border border-dark1 ml-4 mt-5 rounded">
+                <h5>Total Maharashtra Property</h5>
+
+                <ul class="list-group">
+                    <li class="list-group-item head-color">Total Property Count</li>
+                    <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.Sum(i => i.TotalProperty)</li>
+                    <li class="list-group-item head-color">Total Liquid Count</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.Sum(i => i.TotalLiquid)</li>
+                    <li class="list-group-item head-color">Total Street Count</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.Sum(i => i.TotalStreet)</li>
+                    <li class="list-group-item head-color">Total Dump Count</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.Sum(i => i.TotalDump)</li>
+                </ul>
+
+            </div>
+        </div>
+        <!-- ImageMap Start -->
+        <div class="border border-dark rounded">
+            <h4 class="text-center mx-0 bg-danger text-white"> Map of Maharashtra</h4>
+            <img src="/Images/GadchiroliMap/Maharashtra.png" usemap="#image-map" id="img_ID" class="mapq" style="width: 100%;">
+            <map name="image-map" id="map_ID">
+                <area target="new" id="2012" alt="" data-toggle="popover" data-trigger="hover" style="position: absolute; transform: translate3d(920px, 227px, 1px); top: 0px; left: 0px; will-change: transform;" data-container="body" data-placement="right" href="/Map/Gadchiroli?DistrictId=2012" coords="764,133,756,134,750,135,747,142,743,147,734,148,717,147,710,151,714,170,712,183,712,194,711,202,717,213,709,220,709,230,712,242,715,254,718,264,715,276,719,283,711,292,716,298,718,308,719,315,727,319,735,325,744,320,750,314,746,304,746,297,746,288,749,281,758,271,766,262,775,264,781,268,789,268,792,262,785,255,796,254,793,248,777,241,777,234,771,229,765,222,760,225,754,224,760,216,756,212,764,211,766,198,754,195,754,187,763,183,771,180,770,174,770,167,772,157,765,158,761,154,767,148,763,142" shape="poly">
+                <area target="new" id="1" alt="Nagpur" data-toggle="popover" data-trigger="hover" style="position: absolute; transform: translate3d(830px, 95px, 0px); top: 0px; left: 0px; will-change: transform;" href="/Map/Nagpur?DistrictId=1" coords="567,96,574,93,584,89,586,83,597,82,611,84,626,81,635,73,652,66,662,65,672,66,675,75,671,83,677,88,681,100,680,109,686,123,684,130,677,141,676,147,668,150,663,153,659,158,654,160,647,152,640,146,634,147,629,142,620,133,612,130,608,122,602,113,594,110,585,104,576,100" shape="poly">
+                <area target="new" id="2011" alt="" data-toggle="popover" data-trigger="hover" style="position: absolute; transform: translate3d(793px, 120px, 0px); top: 0px; left: 0px; will-change: transform;" href="/Map/Wardha?DistrictId=2011" coords="550,95,559,95,568,97,583,104,592,110,606,122,614,130,625,140,630,145,641,150,651,157,652,165,645,170,637,167,634,172,629,174,622,176,620,181,618,192,612,188,606,184,602,178,598,173,591,170,581,167,573,165,569,156,570,148,572,140,567,136,560,129,558,121,558,114,552,107" shape="poly">
+                <area target="new" id="2" alt="" data-toggle="popover" data-trigger="hover" style="position: absolute; transform: translate3d(720px, 102px, 0px); top: 0px; left: 0px; will-change: transform;" href="/Map/Amravati?DistrictId=2" coords="429,98,435,93,437,83,442,77,449,76,456,72,468,63,474,66,482,65,485,58,492,62,500,63,507,71,511,79,505,78,498,77,495,82,498,87,502,93,509,95,512,89,518,95,528,94,540,94,546,89,555,86,561,78,569,75,578,72,581,81,583,88,576,93,567,95,559,95,553,95,549,101,552,109,557,113,558,121,559,130,566,137,569,146,569,154,564,156,556,156,551,160,547,165,542,160,534,166,529,164,522,164,521,158,517,150,514,142,509,138,499,139,490,141,481,140,478,131,478,120,480,108,474,108,467,105,462,107,458,112,451,109,446,108,440,111,435,102" shape="poly">
+                <area target="new" id="2017" data-toggle="popover" data-trigger="hover" style="position: absolute; transform: translate3d(386px, 187px, 0px); top: 0px; left: 0px; will-change: transform;" href="/Map/palghar?DistrictId=2017" coords="94,212,101,215,96,204,101,194,108,195,113,189,115,197,121,202,128,202,136,204,145,206,152,210,148,220,156,230,153,236,143,239,137,243,131,249,125,253,119,252,117,257,113,263,108,261,98,260,100,253,98,244,97,236,95,224" shape="poly">
+                <area target="new" id="2020" alt="thane" data-toggle="popover" data-trigger="hover" style="position: absolute; transform: translate3d(409px, 225px, 0px); top: 0px; left: 0px; will-change: transform;" href="" coords="101,261,109,263,114,259,119,253,126,251,137,244,147,238,157,234,165,243,169,252,175,257,181,265,176,266,171,267,170,274,162,277,158,285,144,282,139,285,134,286,126,283,125,277,119,269" shape="poly">
+                <area target="new" id="2015" alt="Parbhani" data-toggle="popover" data-trigger="hover" style="position: absolute; transform: translate3d(643px, 222px, 0px); top: 0px; left: 0px; will-change: transform;" href="/Map/Parbhani?DistrictId=2015" coords="387,272,403,278,405,284,401,291,414,292,413,301,421,302,423,308,428,312,434,318,439,312,447,314,455,311,459,305,449,306,445,291,443,277,441,270,438,260,443,250,450,241,440,240,432,231,434,224,425,226,419,222,414,217,408,218,404,224,404,231,399,232,394,235,399,241,390,242,392,251,391,259,387,267" shape="poly">
+                <area target="new" id="2014" alt="Bhandara" data-toggle="popover" data-trigger="hover" style="position: absolute; transform: translate3d(882px, 98px, 0px); top: 0px; left: 0px; will-change: transform;" href="/Map/Bhandara?DistrictId=2014" coords="676,76,683,75,692,70,701,74,711,76,705,88,713,94,722,103,725,114,721,119,712,125,704,127,707,136,712,143,710,149,702,145,696,149,689,149,684,148,677,147,680,138,686,131,687,124,682,118,681,111,681,102,683,95,678,91,672,85" shape="poly">
+                <area target="new" id="2016" alt="Solapur" data-toggle="popover" data-trigger="hover" style="position: absolute; transform: translate3d(562px, 341px, 0px); top: 0px; left: 0px; will-change: transform;" href="/Map/Solapur?DistrictId=2016" coords="271,363,276,354,285,351,293,350,296,343,304,340,311,340,309,351,318,356,321,361,323,370,332,372,335,364,344,357,347,346,355,354,362,358,369,352,376,351,371,358,368,365,369,373,373,382,369,386,364,381,359,386,360,396,365,402,373,397,374,404,386,407,390,413,399,409,412,417,404,421,403,429,400,434,407,444,402,445,395,442,388,443,382,443,377,446,369,447,365,443,361,440,353,440,348,438,341,430,339,435,336,441,337,447,330,451,322,448,325,455,317,452,314,459,307,456,310,451,305,449,300,452,292,452,285,455,280,461,279,455,274,454,279,448,283,443,291,433,281,431,285,424,279,417,276,410,268,406,263,404,257,399,252,398,253,390,260,382,270,384,272,389,285,392,289,386,299,378,292,371,281,364,271,359" shape="poly">
+                @*<area target="new" id="2019" alt="Buldhana" data-toggle="popover" data-trigger="hover" style="position: absolute; transform: translate3d(636px, 142px, 0px); top: 0px; left: 0px; will-change: transform;" href="/Map/Khamgaon?DistrictId=2019" coords="434,101,430,109,423,115,414,116,407,121,405,129,399,128,395,123,384,128,381,136,379,142,372,147,377,159,374,166,369,177,368,187,376,188,381,183,387,188,387,197,380,204,376,210,376,216,384,219,386,225,397,223,405,224,409,219,418,218,421,226,432,225,434,213,429,203,444,200,440,193,436,187,434,180,436,172,440,167,440,160,435,156,437,148,435,138,440,131,440,126,440,111" shape="poly">*@
+                <area target="new" id="2019" alt="Buldhana" class="jq_maphilight" href="/Map/Khamgaon?DistrictId=2019" coords="434,101,430,109,423,115,414,116,407,121,405,129,399,128,395,123,384,128,381,136,379,142,372,147,377,159,374,166,369,177,368,187,376,188,381,183,387,188,387,197,380,204,376,210,376,216,384,219,386,225,397,223,405,224,409,219,418,218,421,226,432,225,434,213,429,203,444,200,440,193,436,187,434,180,436,172,440,167,440,160,435,156,437,148,435,138,440,131,440,126,440,111" shape="poly">
+                <area target="new" id="2018" alt="Pune" data-toggle="popover" data-trigger="hover" style="position: absolute; transform: translate3d(452px, 280px, 0px); top: 0px; left: 0px; will-change: transform;" href="/Map/Pune?DistrictId=2018" coords="226,277,220,283,215,288,214,297,224,307,234,317,242,330,247,335,253,348,260,344,269,351,269,363,277,366,287,367,293,371,297,379,289,385,286,392,274,389,272,384,260,380,246,380,238,379,219,376,190,366,187,378,180,381,175,378,169,378,164,376,166,369,161,364,157,359,148,353,148,345,143,341,141,332,144,324,143,309,153,299,159,283,171,274,176,267,185,262,191,269,199,265,200,277,209,281,218,278" shape="poly">
+                <area target="" id="2010" alt="Gondia" data-toggle="popover" data-trigger="hover" style="position: absolute; transform: translate3d(922px, 97px, 0px); top: 0px; left: 0px; will-change: transform;" href="/Map/Gondia?DistrictId=2010" coords="715,75,708,81,704,85,705,91,715,94,721,100,724,110,724,118,717,120,710,127,703,128,709,139,712,149,720,146,730,148,739,149,746,142,746,133,751,137,763,134,760,127,754,125,749,118,752,111,758,105,764,102,772,94,765,91,756,87,748,77,734,67,729,70,724,76" shape="poly">
+
+            </map>
+
+        </div>
+
+
+        <div class="mr-5">
+            <div class="border border-dark1 ml-4 mt-5 rounded">
+                <h5>Today Total Scan Maharashtra Property</h5>
+                <ul class="list-group">
+                    <li class="list-group-item head-color">Today Scan Property Count</li>
+                    <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.Sum(i => i.TotalProperty_Scan)</li>
+                    <li class="list-group-item head-color">Today Scan Liquid Count</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i> @Model.Sum(i => i.TotalLiquid_Scan)</li>
+                    <li class="list-group-item head-color">Today Scan Street Count</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.Sum(i => i.TotalStreet_Scan)</li>
+                    <li class="list-group-item head-color">Today Scan Dump Count</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i> @Model.Sum(i => i.TotalDump_Scan)</li>
+                </ul>
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+    window.onload = function () {
+        debugger;
+        var ImageMap = function (map, img) {
+            var n,
+                areas = map.getElementsByTagName('area'),
+                len = areas.length,
+                coords = [],
+                previousWidth = 800;
+            for (n = 0; n < len; n++) {
+                coords[n] = areas[n].coords.split(',');
+            }
+            this.resize = function () {
+                var n, m, clen,
+                    x = img.offsetWidth / previousWidth;
+                for (n = 0; n < len; n++) {
+                    clen = coords[n].length;
+                    for (m = 0; m < clen; m++) {
+                        coords[n][m] *= x;
+                    }
+                    areas[n].coords = coords[n].join(',');
+                }
+                previousWidth = img.offsetWidth;
+                return true;
+            };
+            window.onresize = this.resize;
+        },
+            imageMap = new ImageMap(document.getElementById('map_ID'), document.getElementById('img_ID'));
+        imageMap.resize();
+        return;
+    }
+
+</script>
