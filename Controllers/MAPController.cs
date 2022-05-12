@@ -17,16 +17,16 @@ namespace MAPWEBAPP.Controllers
         {
             _context = context;
         }
-     
 
 
-        public IActionResult Index(int DivisionId=1,int DistrictId=0,int AppId=0,int UserId=0)
+
+        public IActionResult Index(int DivisionId = 1, int DistrictId = 0, int AppId = 0, int UserId = 0)
         {
-             string StoredProc = "exec SP_ULBADMIN " +
-            "@DivisionIdIn = " + DivisionId + "," +
-            "@DistrictIdIn = '" + DistrictId + "'," +
-            "@AppIdIN= '" + AppId + "'," +
-            "@UserId= '" + UserId + "'";
+            string StoredProc = "exec SP_ULBADMIN " +
+           "@DivisionIdIn = " + DivisionId + "," +
+           "@DistrictIdIn = '" + DistrictId + "'," +
+           "@AppIdIN= '" + AppId + "'," +
+           "@UserId= '" + UserId + "'";
             var data = _context.AdminULBDetails.FromSqlRaw(StoredProc).ToListAsync();
             return View(data);
         }
@@ -37,7 +37,7 @@ namespace MAPWEBAPP.Controllers
 
 
         {
-          //  string StoredProcM = "exec SP_MAPS_ScanDETAILS " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = '" + DistrictId + "'," + "@AppIdIN= '" + AppId + "'," + "@UserId= '" + UserId + "'";
+            //  string StoredProcM = "exec SP_MAPS_ScanDETAILS " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = '" + DistrictId + "'," + "@AppIdIN= '" + AppId + "'," + "@UserId= '" + UserId + "'";
             //var dataM = _context.SP_MAPS_ScanDETAILS.FromSqlRaw(StoredProcM).ToList();
             //var House = dataM.AsEnumerable().Select(r => r.TotalProperty_Scan).FirstOrDefault();
             //var Liquid = dataM.AsEnumerable().Select(r => r.TotalLiquid_Scan).FirstOrDefault();
@@ -55,7 +55,7 @@ namespace MAPWEBAPP.Controllers
 
         [HttpPost]
         public JsonResult Loaddata(int DivisionId = 0, int DistrictId = 0, int AppId = 0, int UserId = 1)
-         {
+        {
             string StoredProc = "exec SP_MAPS_DETAILS " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = '" + DistrictId + "'," + "@AppIdIN= '" + AppId + "'," + "@UserId= '" + UserId + "'";
             var data = _context.SP_MAPS_DETAILS.FromSqlRaw(StoredProc).ToList();
             var DistrictName = _context.Tehsils.Where(x => x.Id == DistrictId).Select(r => r.Name).FirstOrDefault();
@@ -71,7 +71,7 @@ namespace MAPWEBAPP.Controllers
             }
 
             return Json(House);
-           
+
         }
 
         public IActionResult Gadchiroli(int DivisionId = 0, int DistrictId = 0, int AppId = 0, int UserId = 1)
@@ -146,5 +146,31 @@ namespace MAPWEBAPP.Controllers
             var data = _context.SP_MAPS_DETAILS.FromSqlRaw(StoredProc).ToList();
             return View(data);
         }
+
+        public IActionResult Index1(int DivisionId = 0, int DistrictId = 0, int AppId = 0, int UserId = 1)
+
+
+        {
+
+
+            string StoredProc = "exec SP_MAPS_DETAILS " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = '" + DistrictId + "'," + "@AppIdIN= '" + AppId + "'," + "@UserId= '" + UserId + "'";
+            var data = _context.SP_MAPS_DETAILS.FromSqlRaw(StoredProc).ToList();
+            return View(data);
+
+
+
+        }
+
+        public IActionResult htmlpage(int DivisionId = 0, int DistrictId = 0, int AppId = 0, int UserId = 1)
+
+
+        {
+          
+
+            string StoredProc = "exec SP_MAPS_DETAILS " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = '" + DistrictId + "'," + "@AppIdIN= '" + AppId + "'," + "@UserId= '" + UserId + "'";
+            var data = _context.SP_MAPS_DETAILS.FromSqlRaw(StoredProc).ToList();
+            return View(data);
+        }
+
     }
 }

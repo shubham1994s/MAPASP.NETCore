@@ -363,7 +363,9 @@
 			img.addClass('maphilighted');
 		});
 	};
+	debugger;
 	$.fn.maphilight.defaults = {
+		
 		fill: true,
 		fillColor: 'ffffff',
 		fillOpacity: 0.2,
