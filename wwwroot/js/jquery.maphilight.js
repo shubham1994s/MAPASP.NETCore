@@ -363,7 +363,7 @@
 			img.addClass('maphilighted');
 		});
 	};
-	debugger;
+	//debugger;
 	$.fn.maphilight.defaults = {
 		
 		fill: true,
