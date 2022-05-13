@@ -55,7 +55,7 @@ namespace MAPWEBAPP.Models
 
         public virtual DbSet<SP_MAPS_DETAILS> SP_MAPS_DETAILS { get; set; }
 
-      
+        public virtual DbSet<SP_ULBADMINMAP> SP_ULBADMINMAP { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MAPWEBAPP.Models.SP_MAPS_DETAILS>
+﻿@model MAPWEBAPP.Models.AdminMapULBDetails
 
 
 <!DOCTYPE html>
@@ -14,50 +14,31 @@
           integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
     <script type="text/javascript" src="~/js/jquery.maphilight.js"></script>
-    @*<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script type='text/javascript' src='http://midnightshealing.poweredhub.com/wp-includes/js/jquery/jquery.js?ver=1.11.0'></script>*@
-
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+          rel="stylesheet">
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script type="text/javascript">
 
 
-        $(document).ready(function () {
-            //   $('#DataTable').DataTable();
-            debugger;
-            var previousText = null;
-            var set_data = '';
-            $('[data-toggle="popover"]').popover({
-                title: setData,
+
+       $(document).ready(function () {
+             debugger;
+        var lstMapDetails = @Html.Raw(Json.Serialize(@Model.ListMapDetails));
+
+        for (i = 0; i < lstMapDetails.length; i++) {
+            if ($("area[id=" + lstMapDetails[i]['ulbId'] + "]").length)
+            {
+                $("area[id=" + lstMapDetails[i]['ulbId'] + "]").tooltip({
+
                 html: true,
-                container: 'body',
-
-            });
-            function setData(id) {
-                debugger;
-                var element = $(this);
-                var id = element.attr("id");
-                var currentText = element.attr("id");
-                if (previousText != currentText) {
-                    $.ajax({
-                        url: "/MAP/Loaddata?AppId=" + id,
-                        method: "post",
-                        dataType: 'json',
-                        async: false,
-                        data: { id: id },
-                        success: function (data) {
-                            debugger;
-                            set_data = data;
-
-                        }
-                    });
-
-                }
-                previousText = currentText;
-                return set_data;
+                track: true, content: "<strong> ULB Name : " + lstMapDetails[i]['ulbName'] + "</strong><br>Total Property :<strong>" + lstMapDetails[i]['totalHouse'] + "</strong><br>Today Property Scanned :<strong>" + lstMapDetails[i]['totalHouseScan'] + "</strong>"});
 
             }
-
+        }
         }
         );
 
@@ -110,13 +91,13 @@
 
                 <ul class="list-group">
                     <li class="list-group-item head-color">Total Property Count</li>
-                    <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.Sum(i => i.TotalProperty)</li>
+                    <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.TotalHouse</li>
                     <li class="list-group-item head-color">Total Liquid Count</li>
-                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.Sum(i => i.TotalLiquid)</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalLiquid</li>
                     <li class="list-group-item head-color">Total Street Count</li>
-                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.Sum(i => i.TotalStreet)</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalStreet</li>
                     <li class="list-group-item head-color">Total Dump Count</li>
-                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.Sum(i => i.TotalDump)</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalDump</li>
                 </ul>
 
             </div>
@@ -127,7 +108,7 @@
             <img src="/Images/GadchiroliMap/Gondia-tehsil-map.jpg" usemap="#image-map" class="map" style="width: 100%;">
 
             <map name="image-map">
-                <area target="new" alt="Goregaon" id="3105" data-toggle="popover" data-trigger="hover" style="position: absolute; transform: translate3d(641px, 213px, 0px); top: 0px; left: 0px; will-change: transform;" href="https://ictsbm.com/?returnUrl=goregaonwaste@ulb.com&Type=W" coords="295,277,302,269,309,261,305,256,310,251,310,244,312,234,314,223,319,215,312,203,319,197,333,197,338,189,335,178,342,175,350,176,362,181,369,186,377,181,384,179,390,183,394,189,405,184,414,192,419,197,425,192,432,189,436,196,435,205,443,211,439,221,438,227,449,223,455,226,463,229,459,237,456,243,453,248,458,255,463,251,468,253,475,261,484,254,492,250,490,258,486,263,480,267,480,274,478,282,472,278,471,284,472,290,479,288,484,293,489,299,487,304,487,313,496,315,498,322,496,331,500,338,493,340,486,342,491,352,484,354,476,353,478,362,471,366,471,373,459,378,449,376,444,367,437,367,431,367,431,358,440,358,449,354,452,346,453,335,450,328,441,328,434,327,428,326,421,325,413,319,408,325,400,328,394,324,392,316,396,309,387,306,378,306,377,297,370,295,364,305,360,297,354,293,349,291,342,291,332,287,324,280,307,278" shape="poly">
+                <area target="new" alt="Goregaon" id="3105" title=""  href="https://ictsbm.com/?returnUrl=goregaonwaste@ulb.com&Type=W" coords="295,277,302,269,309,261,305,256,310,251,310,244,312,234,314,223,319,215,312,203,319,197,333,197,338,189,335,178,342,175,350,176,362,181,369,186,377,181,384,179,390,183,394,189,405,184,414,192,419,197,425,192,432,189,436,196,435,205,443,211,439,221,438,227,449,223,455,226,463,229,459,237,456,243,453,248,458,255,463,251,468,253,475,261,484,254,492,250,490,258,486,263,480,267,480,274,478,282,472,278,471,284,472,290,479,288,484,293,489,299,487,304,487,313,496,315,498,322,496,331,500,338,493,340,486,342,491,352,484,354,476,353,478,362,471,366,471,373,459,378,449,376,444,367,437,367,431,367,431,358,440,358,449,354,452,346,453,335,450,328,441,328,434,327,428,326,421,325,413,319,408,325,400,328,394,324,392,316,396,309,387,306,378,306,377,297,370,295,364,305,360,297,354,293,349,291,342,291,332,287,324,280,307,278" shape="poly">
 
             </map>
 
@@ -139,13 +120,13 @@
                 <h5>Today Total Scan Gondia Property</h5>
                 <ul class="list-group">
                     <li class="list-group-item head-color">Today Scan Property Count</li>
-                    <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.Sum(i => i.TotalProperty_Scan)</li>
+                    <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.TotalHouseScan</li>
                     <li class="list-group-item head-color">Today Scan Liquid Count</li>
-                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i> @Model.Sum(i => i.TotalLiquid_Scan)</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i> @Model.TotalLiquidScan</li>
                     <li class="list-group-item head-color">Today Scan Street Count</li>
-                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.Sum(i => i.TotalStreet_Scan)</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalStreetScan</li>
                     <li class="list-group-item head-color">Today Scan Dump Count</li>
-                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i> @Model.Sum(i => i.TotalDump_Scan)</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i> @Model.TotalDumpScan</li>
                 </ul>
 
             </div>

@@ -48,9 +48,45 @@ namespace MAPWEBAPP.Controllers
             //ViewBag.TotalStreet_Scan = Street;
             //ViewBag.TotalDump_Scan = dump;
 
-            string StoredProc = "exec SP_MAPS_DETAILS " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = '" + DistrictId + "'," + "@AppIdIN= '" + AppId + "'," + "@UserId= '" + UserId + "'";
-            var data = _context.SP_MAPS_DETAILS.FromSqlRaw(StoredProc).ToList();
-            return View(data);
+
+
+            AdminMapULBDetails mapDetail = new AdminMapULBDetails();
+            List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
+            //  string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = '" + DistrictId + "'," + "@AppIdIN= '" + AppId + "'," + "@UserId= '" + UserId + "'";
+            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+
+            if (data != null && data.Count > 0)
+            {
+                foreach (var item in data)
+                {
+                    mapDetail.TotalHouse += item.TotalHouse ?? 0;
+                    mapDetail.TotalHouseScan += item.TotalHouseScan ?? 0;
+                    mapDetail.TotalLiquid += item.TotalLiquid ?? 0;
+                    mapDetail.TotalLiquidScan += item.TotalLiquidScan ?? 0;
+                    mapDetail.TotalStreet += item.TotalStreet ?? 0;
+                    mapDetail.TotalStreetScan += item.TotalStreetScan ?? 0;
+                    mapDetail.TotalDump += item.TotalDump ?? 0;
+                    mapDetail.TotalDumpScan += item.TotalDumpScan ?? 0;
+
+                }
+                mapDetail.ListMapDetails = data.Select(x => new AdminMapULBDetailsIteam()
+                {
+                    ULBId = x.ULBId,
+                    ULBName = x.ULBName,
+                    TotalHouse = x.TotalHouse,
+                    TotalHouseScan = x.TotalHouseScan,
+                    TotalLiquid = x.TotalLiquid,
+                    TotalLiquidScan = x.TotalLiquidScan,
+                    TotalStreet = x.TotalStreet,
+                    TotalStreetScan = x.TotalStreetScan,
+                    TotalDump = x.TotalDump,
+                    TotalDumpScan = x.TotalDumpScan,
+                    ParentULB = x.ParentULB
+                })
+                .ToList();
+            }
+            return View(mapDetail);
         }
 
         [HttpPost]
@@ -76,101 +112,440 @@ namespace MAPWEBAPP.Controllers
 
         public IActionResult Gadchiroli(int DivisionId = 0, int DistrictId = 0, int AppId = 0, int UserId = 1)
         {
-            string StoredProc = "exec SP_MAPS_DETAILS " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = '" + DistrictId + "'," + "@AppIdIN= '" + AppId + "'," + "@UserId= '" + UserId + "'";
-            var data = _context.SP_MAPS_DETAILS.FromSqlRaw(StoredProc).ToList();
-            return View(data);
+            AdminMapULBDetails mapDetail = new AdminMapULBDetails();
+            List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
+            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+
+            if (data != null && data.Count > 0)
+            {
+                foreach (var item in data)
+                {
+                    mapDetail.TotalHouse += item.TotalHouse ?? 0;
+                    mapDetail.TotalHouseScan += item.TotalHouseScan ?? 0;
+                    mapDetail.TotalLiquid += item.TotalLiquid ?? 0;
+                    mapDetail.TotalLiquidScan += item.TotalLiquidScan ?? 0;
+                    mapDetail.TotalStreet += item.TotalStreet ?? 0;
+                    mapDetail.TotalStreetScan += item.TotalStreetScan ?? 0;
+                    mapDetail.TotalDump += item.TotalDump ?? 0;
+                    mapDetail.TotalDumpScan += item.TotalDumpScan ?? 0;
+
+                }
+                mapDetail.ListMapDetails = data.Select(x => new AdminMapULBDetailsIteam()
+                {
+                    ULBId = x.ULBId,
+                    ULBName = x.ULBName,
+                    TotalHouse = x.TotalHouse,
+                    TotalHouseScan = x.TotalHouseScan,
+                    TotalLiquid = x.TotalLiquid,
+                    TotalLiquidScan = x.TotalLiquidScan,
+                    TotalStreet = x.TotalStreet,
+                    TotalStreetScan = x.TotalStreetScan,
+                    TotalDump = x.TotalDump,
+                    TotalDumpScan = x.TotalDumpScan,
+                    ParentULB = x.ParentULB
+                })
+                .ToList();
+            }
+            return View(mapDetail);
         }
 
         public IActionResult Nagpur(int DivisionId = 0, int DistrictId = 0, int AppId = 0, int UserId = 1)
         {
-            string StoredProc = "exec SP_MAPS_DETAILS " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = '" + DistrictId + "'," + "@AppIdIN= '" + AppId + "'," + "@UserId= '" + UserId + "'";
-            var data = _context.SP_MAPS_DETAILS.FromSqlRaw(StoredProc).ToList();
-            return View(data);
+            AdminMapULBDetails mapDetail = new AdminMapULBDetails();
+            List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
+            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+
+            if (data != null && data.Count > 0)
+            {
+                foreach (var item in data)
+                {
+                    mapDetail.TotalHouse += item.TotalHouse ?? 0;
+                    mapDetail.TotalHouseScan += item.TotalHouseScan ?? 0;
+                    mapDetail.TotalLiquid += item.TotalLiquid ?? 0;
+                    mapDetail.TotalLiquidScan += item.TotalLiquidScan ?? 0;
+                    mapDetail.TotalStreet += item.TotalStreet ?? 0;
+                    mapDetail.TotalStreetScan += item.TotalStreetScan ?? 0;
+                    mapDetail.TotalDump += item.TotalDump ?? 0;
+                    mapDetail.TotalDumpScan += item.TotalDumpScan ?? 0;
+
+                }
+                mapDetail.ListMapDetails = data.Select(x => new AdminMapULBDetailsIteam()
+                {
+                    ULBId = x.ULBId,
+                    ULBName = x.ULBName,
+                    TotalHouse = x.TotalHouse,
+                    TotalHouseScan = x.TotalHouseScan,
+                    TotalLiquid = x.TotalLiquid,
+                    TotalLiquidScan = x.TotalLiquidScan,
+                    TotalStreet = x.TotalStreet,
+                    TotalStreetScan = x.TotalStreetScan,
+                    TotalDump = x.TotalDump,
+                    TotalDumpScan = x.TotalDumpScan,
+                    ParentULB = x.ParentULB
+                })
+                .ToList();
+            }
+            return View(mapDetail);
         }
 
         public IActionResult palghar(int DivisionId = 0, int DistrictId = 0, int AppId = 0, int UserId = 1)
         {
-            string StoredProc = "exec SP_MAPS_DETAILS " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = '" + DistrictId + "'," + "@AppIdIN= '" + AppId + "'," + "@UserId= '" + UserId + "'";
-            var data = _context.SP_MAPS_DETAILS.FromSqlRaw(StoredProc).ToList();
-            return View(data);
+            AdminMapULBDetails mapDetail = new AdminMapULBDetails();
+            List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
+            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+
+            if (data != null && data.Count > 0)
+            {
+                foreach (var item in data)
+                {
+                    mapDetail.TotalHouse += item.TotalHouse ?? 0;
+                    mapDetail.TotalHouseScan += item.TotalHouseScan ?? 0;
+                    mapDetail.TotalLiquid += item.TotalLiquid ?? 0;
+                    mapDetail.TotalLiquidScan += item.TotalLiquidScan ?? 0;
+                    mapDetail.TotalStreet += item.TotalStreet ?? 0;
+                    mapDetail.TotalStreetScan += item.TotalStreetScan ?? 0;
+                    mapDetail.TotalDump += item.TotalDump ?? 0;
+                    mapDetail.TotalDumpScan += item.TotalDumpScan ?? 0;
+
+                }
+                mapDetail.ListMapDetails = data.Select(x => new AdminMapULBDetailsIteam()
+                {
+                    ULBId = x.ULBId,
+                    ULBName = x.ULBName,
+                    TotalHouse = x.TotalHouse,
+                    TotalHouseScan = x.TotalHouseScan,
+                    TotalLiquid = x.TotalLiquid,
+                    TotalLiquidScan = x.TotalLiquidScan,
+                    TotalStreet = x.TotalStreet,
+                    TotalStreetScan = x.TotalStreetScan,
+                    TotalDump = x.TotalDump,
+                    TotalDumpScan = x.TotalDumpScan,
+                    ParentULB = x.ParentULB
+                })
+                .ToList();
+            }
+            return View(mapDetail);
         }
 
         public IActionResult Amravati(int DivisionId = 0, int DistrictId = 0, int AppId = 0, int UserId = 1)
         {
-            string StoredProc = "exec SP_MAPS_DETAILS " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = '" + DistrictId + "'," + "@AppIdIN= '" + AppId + "'," + "@UserId= '" + UserId + "'";
-            var data = _context.SP_MAPS_DETAILS.FromSqlRaw(StoredProc).ToList();
-            return View(data);
+            AdminMapULBDetails mapDetail = new AdminMapULBDetails();
+            List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
+            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+
+            if (data != null && data.Count > 0)
+            {
+                foreach (var item in data)
+                {
+                    mapDetail.TotalHouse += item.TotalHouse ?? 0;
+                    mapDetail.TotalHouseScan += item.TotalHouseScan ?? 0;
+                    mapDetail.TotalLiquid += item.TotalLiquid ?? 0;
+                    mapDetail.TotalLiquidScan += item.TotalLiquidScan ?? 0;
+                    mapDetail.TotalStreet += item.TotalStreet ?? 0;
+                    mapDetail.TotalStreetScan += item.TotalStreetScan ?? 0;
+                    mapDetail.TotalDump += item.TotalDump ?? 0;
+                    mapDetail.TotalDumpScan += item.TotalDumpScan ?? 0;
+
+                }
+                mapDetail.ListMapDetails = data.Select(x => new AdminMapULBDetailsIteam()
+                {
+                    ULBId = x.ULBId,
+                    ULBName = x.ULBName,
+                    TotalHouse = x.TotalHouse,
+                    TotalHouseScan = x.TotalHouseScan,
+                    TotalLiquid = x.TotalLiquid,
+                    TotalLiquidScan = x.TotalLiquidScan,
+                    TotalStreet = x.TotalStreet,
+                    TotalStreetScan = x.TotalStreetScan,
+                    TotalDump = x.TotalDump,
+                    TotalDumpScan = x.TotalDumpScan,
+                    ParentULB = x.ParentULB
+                })
+                .ToList();
+            }
+            return View(mapDetail);
         }
         public IActionResult Bhandara(int DivisionId = 0, int DistrictId = 0, int AppId = 0, int UserId = 1)
         {
-            string StoredProc = "exec SP_MAPS_DETAILS " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = '" + DistrictId + "'," + "@AppIdIN= '" + AppId + "'," + "@UserId= '" + UserId + "'";
-            var data = _context.SP_MAPS_DETAILS.FromSqlRaw(StoredProc).ToList();
-            return View(data);
+            AdminMapULBDetails mapDetail = new AdminMapULBDetails();
+            List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
+            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+
+            if (data != null && data.Count > 0)
+            {
+                foreach (var item in data)
+                {
+                    mapDetail.TotalHouse += item.TotalHouse ?? 0;
+                    mapDetail.TotalHouseScan += item.TotalHouseScan ?? 0;
+                    mapDetail.TotalLiquid += item.TotalLiquid ?? 0;
+                    mapDetail.TotalLiquidScan += item.TotalLiquidScan ?? 0;
+                    mapDetail.TotalStreet += item.TotalStreet ?? 0;
+                    mapDetail.TotalStreetScan += item.TotalStreetScan ?? 0;
+                    mapDetail.TotalDump += item.TotalDump ?? 0;
+                    mapDetail.TotalDumpScan += item.TotalDumpScan ?? 0;
+
+                }
+                mapDetail.ListMapDetails = data.Select(x => new AdminMapULBDetailsIteam()
+                {
+                    ULBId = x.ULBId,
+                    ULBName = x.ULBName,
+                    TotalHouse = x.TotalHouse,
+                    TotalHouseScan = x.TotalHouseScan,
+                    TotalLiquid = x.TotalLiquid,
+                    TotalLiquidScan = x.TotalLiquidScan,
+                    TotalStreet = x.TotalStreet,
+                    TotalStreetScan = x.TotalStreetScan,
+                    TotalDump = x.TotalDump,
+                    TotalDumpScan = x.TotalDumpScan,
+                    ParentULB = x.ParentULB
+                })
+                .ToList();
+            }
+            return View(mapDetail);
         }
 
         public IActionResult Khamgaon(int DivisionId = 0, int DistrictId = 0, int AppId = 0, int UserId = 1)
         {
-            string StoredProc = "exec SP_MAPS_DETAILS " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = '" + DistrictId + "'," + "@AppIdIN= '" + AppId + "'," + "@UserId= '" + UserId + "'";
-            var data = _context.SP_MAPS_DETAILS.FromSqlRaw(StoredProc).ToList();
-            return View(data);
+            AdminMapULBDetails mapDetail = new AdminMapULBDetails();
+            List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
+            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+
+            if (data != null && data.Count > 0)
+            {
+                foreach (var item in data)
+                {
+                    mapDetail.TotalHouse += item.TotalHouse ?? 0;
+                    mapDetail.TotalHouseScan += item.TotalHouseScan ?? 0;
+                    mapDetail.TotalLiquid += item.TotalLiquid ?? 0;
+                    mapDetail.TotalLiquidScan += item.TotalLiquidScan ?? 0;
+                    mapDetail.TotalStreet += item.TotalStreet ?? 0;
+                    mapDetail.TotalStreetScan += item.TotalStreetScan ?? 0;
+                    mapDetail.TotalDump += item.TotalDump ?? 0;
+                    mapDetail.TotalDumpScan += item.TotalDumpScan ?? 0;
+
+                }
+                mapDetail.ListMapDetails = data.Select(x => new AdminMapULBDetailsIteam()
+                {
+                    ULBId = x.ULBId,
+                    ULBName = x.ULBName,
+                    TotalHouse = x.TotalHouse,
+                    TotalHouseScan = x.TotalHouseScan,
+                    TotalLiquid = x.TotalLiquid,
+                    TotalLiquidScan = x.TotalLiquidScan,
+                    TotalStreet = x.TotalStreet,
+                    TotalStreetScan = x.TotalStreetScan,
+                    TotalDump = x.TotalDump,
+                    TotalDumpScan = x.TotalDumpScan,
+                    ParentULB = x.ParentULB
+                })
+                .ToList();
+            }
+            return View(mapDetail);
         }
 
         public IActionResult Parbhani(int DivisionId = 0, int DistrictId = 0, int AppId = 0, int UserId = 1)
         {
-            string StoredProc = "exec SP_MAPS_DETAILS " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = '" + DistrictId + "'," + "@AppIdIN= '" + AppId + "'," + "@UserId= '" + UserId + "'";
-            var data = _context.SP_MAPS_DETAILS.FromSqlRaw(StoredProc).ToList();
-            return View(data);
+            AdminMapULBDetails mapDetail = new AdminMapULBDetails();
+            List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
+            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+
+            if (data != null && data.Count > 0)
+            {
+                foreach (var item in data)
+                {
+                    mapDetail.TotalHouse += item.TotalHouse ?? 0;
+                    mapDetail.TotalHouseScan += item.TotalHouseScan ?? 0;
+                    mapDetail.TotalLiquid += item.TotalLiquid ?? 0;
+                    mapDetail.TotalLiquidScan += item.TotalLiquidScan ?? 0;
+                    mapDetail.TotalStreet += item.TotalStreet ?? 0;
+                    mapDetail.TotalStreetScan += item.TotalStreetScan ?? 0;
+                    mapDetail.TotalDump += item.TotalDump ?? 0;
+                    mapDetail.TotalDumpScan += item.TotalDumpScan ?? 0;
+
+                }
+                mapDetail.ListMapDetails = data.Select(x => new AdminMapULBDetailsIteam()
+                {
+                    ULBId = x.ULBId,
+                    ULBName = x.ULBName,
+                    TotalHouse = x.TotalHouse,
+                    TotalHouseScan = x.TotalHouseScan,
+                    TotalLiquid = x.TotalLiquid,
+                    TotalLiquidScan = x.TotalLiquidScan,
+                    TotalStreet = x.TotalStreet,
+                    TotalStreetScan = x.TotalStreetScan,
+                    TotalDump = x.TotalDump,
+                    TotalDumpScan = x.TotalDumpScan,
+                    ParentULB = x.ParentULB
+                })
+                .ToList();
+            }
+            return View(mapDetail);
         }
         public IActionResult Solapur(int DivisionId = 0, int DistrictId = 0, int AppId = 0, int UserId = 1)
         {
-            string StoredProc = "exec SP_MAPS_DETAILS " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = '" + DistrictId + "'," + "@AppIdIN= '" + AppId + "'," + "@UserId= '" + UserId + "'";
-            var data = _context.SP_MAPS_DETAILS.FromSqlRaw(StoredProc).ToList();
-            return View(data);
+            AdminMapULBDetails mapDetail = new AdminMapULBDetails();
+            List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
+            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+
+            if (data != null && data.Count > 0)
+            {
+                foreach (var item in data)
+                {
+                    mapDetail.TotalHouse += item.TotalHouse ?? 0;
+                    mapDetail.TotalHouseScan += item.TotalHouseScan ?? 0;
+                    mapDetail.TotalLiquid += item.TotalLiquid ?? 0;
+                    mapDetail.TotalLiquidScan += item.TotalLiquidScan ?? 0;
+                    mapDetail.TotalStreet += item.TotalStreet ?? 0;
+                    mapDetail.TotalStreetScan += item.TotalStreetScan ?? 0;
+                    mapDetail.TotalDump += item.TotalDump ?? 0;
+                    mapDetail.TotalDumpScan += item.TotalDumpScan ?? 0;
+
+                }
+                mapDetail.ListMapDetails = data.Select(x => new AdminMapULBDetailsIteam()
+                {
+                    ULBId = x.ULBId,
+                    ULBName = x.ULBName,
+                    TotalHouse = x.TotalHouse,
+                    TotalHouseScan = x.TotalHouseScan,
+                    TotalLiquid = x.TotalLiquid,
+                    TotalLiquidScan = x.TotalLiquidScan,
+                    TotalStreet = x.TotalStreet,
+                    TotalStreetScan = x.TotalStreetScan,
+                    TotalDump = x.TotalDump,
+                    TotalDumpScan = x.TotalDumpScan,
+                    ParentULB = x.ParentULB
+                })
+                .ToList();
+            }
+            return View(mapDetail);
         }
         public IActionResult Wardha(int DivisionId = 0, int DistrictId = 0, int AppId = 0, int UserId = 1)
         {
-            string StoredProc = "exec SP_MAPS_DETAILS " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = '" + DistrictId + "'," + "@AppIdIN= '" + AppId + "'," + "@UserId= '" + UserId + "'";
-            var data = _context.SP_MAPS_DETAILS.FromSqlRaw(StoredProc).ToList();
-            return View(data);
+            AdminMapULBDetails mapDetail = new AdminMapULBDetails();
+            List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
+            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+
+            if (data != null && data.Count > 0)
+            {
+                foreach (var item in data)
+                {
+                    mapDetail.TotalHouse += item.TotalHouse ?? 0;
+                    mapDetail.TotalHouseScan += item.TotalHouseScan ?? 0;
+                    mapDetail.TotalLiquid += item.TotalLiquid ?? 0;
+                    mapDetail.TotalLiquidScan += item.TotalLiquidScan ?? 0;
+                    mapDetail.TotalStreet += item.TotalStreet ?? 0;
+                    mapDetail.TotalStreetScan += item.TotalStreetScan ?? 0;
+                    mapDetail.TotalDump += item.TotalDump ?? 0;
+                    mapDetail.TotalDumpScan += item.TotalDumpScan ?? 0;
+
+                }
+                mapDetail.ListMapDetails = data.Select(x => new AdminMapULBDetailsIteam()
+                {
+                    ULBId = x.ULBId,
+                    ULBName = x.ULBName,
+                    TotalHouse = x.TotalHouse,
+                    TotalHouseScan = x.TotalHouseScan,
+                    TotalLiquid = x.TotalLiquid,
+                    TotalLiquidScan = x.TotalLiquidScan,
+                    TotalStreet = x.TotalStreet,
+                    TotalStreetScan = x.TotalStreetScan,
+                    TotalDump = x.TotalDump,
+                    TotalDumpScan = x.TotalDumpScan,
+                    ParentULB = x.ParentULB
+                })
+                .ToList();
+            }
+            return View(mapDetail);
         }
         public IActionResult Gondia(int DivisionId = 0, int DistrictId = 0, int AppId = 0, int UserId = 1)
         {
-            string StoredProc = "exec SP_MAPS_DETAILS " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = '" + DistrictId + "'," + "@AppIdIN= '" + AppId + "'," + "@UserId= '" + UserId + "'";
-            var data = _context.SP_MAPS_DETAILS.FromSqlRaw(StoredProc).ToList();
-            return View(data);
+            AdminMapULBDetails mapDetail = new AdminMapULBDetails();
+            List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
+            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+
+            if (data != null && data.Count > 0)
+            {
+                foreach (var item in data)
+                {
+                    mapDetail.TotalHouse += item.TotalHouse ?? 0;
+                    mapDetail.TotalHouseScan += item.TotalHouseScan ?? 0;
+                    mapDetail.TotalLiquid += item.TotalLiquid ?? 0;
+                    mapDetail.TotalLiquidScan += item.TotalLiquidScan ?? 0;
+                    mapDetail.TotalStreet += item.TotalStreet ?? 0;
+                    mapDetail.TotalStreetScan += item.TotalStreetScan ?? 0;
+                    mapDetail.TotalDump += item.TotalDump ?? 0;
+                    mapDetail.TotalDumpScan += item.TotalDumpScan ?? 0;
+
+                }
+                mapDetail.ListMapDetails = data.Select(x => new AdminMapULBDetailsIteam()
+                {
+                    ULBId = x.ULBId,
+                    ULBName = x.ULBName,
+                    TotalHouse = x.TotalHouse,
+                    TotalHouseScan = x.TotalHouseScan,
+                    TotalLiquid = x.TotalLiquid,
+                    TotalLiquidScan = x.TotalLiquidScan,
+                    TotalStreet = x.TotalStreet,
+                    TotalStreetScan = x.TotalStreetScan,
+                    TotalDump = x.TotalDump,
+                    TotalDumpScan = x.TotalDumpScan,
+                    ParentULB = x.ParentULB
+                })
+                .ToList();
+            }
+            return View(mapDetail);
         }
 
         public IActionResult Pune(int DivisionId = 0, int DistrictId = 0, int AppId = 0, int UserId = 1)
         {
-            string StoredProc = "exec SP_MAPS_DETAILS " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = '" + DistrictId + "'," + "@AppIdIN= '" + AppId + "'," + "@UserId= '" + UserId + "'";
-            var data = _context.SP_MAPS_DETAILS.FromSqlRaw(StoredProc).ToList();
-            return View(data);
+            AdminMapULBDetails mapDetail = new AdminMapULBDetails();
+            List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
+            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+
+            if (data != null && data.Count > 0)
+            {
+                foreach (var item in data)
+                {
+                    mapDetail.TotalHouse += item.TotalHouse ?? 0;
+                    mapDetail.TotalHouseScan += item.TotalHouseScan ?? 0;
+                    mapDetail.TotalLiquid += item.TotalLiquid ?? 0;
+                    mapDetail.TotalLiquidScan += item.TotalLiquidScan ?? 0;
+                    mapDetail.TotalStreet += item.TotalStreet ?? 0;
+                    mapDetail.TotalStreetScan += item.TotalStreetScan ?? 0;
+                    mapDetail.TotalDump += item.TotalDump ?? 0;
+                    mapDetail.TotalDumpScan += item.TotalDumpScan ?? 0;
+
+                }
+                mapDetail.ListMapDetails = data.Select(x => new AdminMapULBDetailsIteam()
+                {
+                    ULBId = x.ULBId,
+                    ULBName = x.ULBName,
+                    TotalHouse = x.TotalHouse,
+                    TotalHouseScan = x.TotalHouseScan,
+                    TotalLiquid = x.TotalLiquid,
+                    TotalLiquidScan = x.TotalLiquidScan,
+                    TotalStreet = x.TotalStreet,
+                    TotalStreetScan = x.TotalStreetScan,
+                    TotalDump = x.TotalDump,
+                    TotalDumpScan = x.TotalDumpScan,
+                    ParentULB = x.ParentULB
+                })
+                .ToList();
+            }
+            return View(mapDetail);
         }
 
-        public IActionResult Index1(int DivisionId = 0, int DistrictId = 0, int AppId = 0, int UserId = 1)
-
-
-        {
-
-
-            string StoredProc = "exec SP_MAPS_DETAILS " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = '" + DistrictId + "'," + "@AppIdIN= '" + AppId + "'," + "@UserId= '" + UserId + "'";
-            var data = _context.SP_MAPS_DETAILS.FromSqlRaw(StoredProc).ToList();
-            return View(data);
-
-
-
-        }
-
-        public IActionResult htmlpage(int DivisionId = 0, int DistrictId = 0, int AppId = 0, int UserId = 1)
-
-
-        {
-          
-
-            string StoredProc = "exec SP_MAPS_DETAILS " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = '" + DistrictId + "'," + "@AppIdIN= '" + AppId + "'," + "@UserId= '" + UserId + "'";
-            var data = _context.SP_MAPS_DETAILS.FromSqlRaw(StoredProc).ToList();
-            return View(data);
-        }
 
     }
 }
