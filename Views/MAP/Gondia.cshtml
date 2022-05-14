@@ -44,7 +44,23 @@
 
 
     </script>
+    <script type="text/javascript">
+        $(function () {
+            $('.map').maphilight();
+        });
+        $(function () {
 
+
+            $('area[title]').click(function () {
+                var $this = $(this);
+                $this.blur();
+                setTimeout(function () {
+                    $this.show()
+                }, 1);
+            });
+
+        });
+    </script>
     <style type="text/css">
         .border-dark1 {
             border-color: #c2c2c2;
@@ -140,9 +156,7 @@
 
 
 <script type="text/javascript">
-    $(function () {
-        $('.map').maphilight();
-    });
+   
 
     window.onload = function () {
         var ImageMap = function (map, img) {

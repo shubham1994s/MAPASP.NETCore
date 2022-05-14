@@ -43,7 +43,20 @@
     <script type="text/javascript">
         $(function () {
             $('.map').maphilight();
-        });</script>
+        });
+        $(function () {
+
+
+            $('area[title]').click(function () {
+                var $this = $(this);
+                $this.blur();
+                setTimeout(function () {
+                    $this.show()
+                }, 1);
+            });
+
+        });
+    </script>
     <style type="text/css">
         .border-dark1 {
             border-color: #c2c2c2;
@@ -107,7 +120,7 @@
             <img src="/Images/GadchiroliMap/amravati-tehsil-map.jpg" usemap="#image-map" class="map" id="img_ID">
 
             <map name="image-map"  id="map_ID">
-                <area target="" alt="" id="3102" title="" href="https://ictsbm.com/?returnUrl=chandurrailwaywaste@ulb.com&Type=W" coords="527,438,536,440,542,444,549,439,556,442,562,439,566,446,576,447,587,441,594,441,595,454,607,452,603,457,593,459,590,465,592,474,581,480,585,486,589,493,598,494,594,500,598,511,593,512,586,517,590,525,593,531,588,536,582,542,581,548,582,554,570,555,562,567,555,561,555,550,543,549,529,545,524,531,525,520,520,511,511,512,522,503,524,496,518,491,518,481,513,483,510,476,514,467,511,461,523,464,524,455,529,448" shape="poly">
+                <area target="new" alt="" id="3102" title="" href="https://ictsbm.com/?returnUrl=chandurrailwaywaste@ulb.com&Type=W" coords="527,438,536,440,542,444,549,439,556,442,562,439,566,446,576,447,587,441,594,441,595,454,607,452,603,457,593,459,590,465,592,474,581,480,585,486,589,493,598,494,594,500,598,511,593,512,586,517,590,525,593,531,588,536,582,542,581,548,582,554,570,555,562,567,555,561,555,550,543,549,529,545,524,531,525,520,520,511,511,512,522,503,524,496,518,491,518,481,513,483,510,476,514,467,511,461,523,464,524,455,529,448" shape="poly">
             </map>
         </div>
 
