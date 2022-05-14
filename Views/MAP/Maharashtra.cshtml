@@ -60,7 +60,7 @@
             //}
             debugger;
         var lstMapDetails = @Html.Raw(Json.Serialize(@Model.ListMapDetails));
-
+     
         for (i = 0; i < lstMapDetails.length; i++) {
             if ($("area[id=" + lstMapDetails[i]['ulbId'] + "]").length)
             {
@@ -71,8 +71,11 @@
 
             }
 
-            }
-       });
+        }
+
+          
+        }
+        );
 
       
 
