@@ -1,4 +1,6 @@
 ﻿
+
+
 @model MAPWEBAPP.Models.AdminMapULBDetails
 
 
@@ -60,7 +62,7 @@
             //}
             debugger;
         var lstMapDetails = @Html.Raw(Json.Serialize(@Model.ListMapDetails));
-
+     
         for (i = 0; i < lstMapDetails.length; i++) {
             if ($("area[id=" + lstMapDetails[i]['ulbId'] + "]").length)
             {
@@ -71,8 +73,11 @@
 
             }
 
-            }
-       });
+        }
+
+          
+        }
+        );
 
       
 
@@ -81,10 +86,22 @@
         $(function () {
             $('.mapq').maphilight();
         });
-     
+        //$('#id').click(function () {
+        //    debugger;
+        //    $('[data-toggle="tooltip"]').tooltip("hide");
+
+        //})
+
         $(function () {
         //    debugger;
-        
+        //    //$tooltip = $(document).tooltip({
+        //    //    show: false,
+        //    //    track: true,
+        //    //    items: "area[data-details]",
+        //    //    content: function () {
+        //    //        return $(this).data('details');
+        //    //    }
+        //    //});
 
     </script>
     <script>
