@@ -25,7 +25,7 @@
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script type="text/javascript">
 
-        $(document).ready(function () {
+        @*$(document).ready(function () {
             //   $('#DataTable').DataTable();
             // debugger;
             //var previousText = null;
@@ -67,27 +67,226 @@
             if ($("area[id=" + lstMapDetails[i]['ulbId'] + "]").length)
             {
                 $("area[id=" + lstMapDetails[i]['ulbId'] + "]").tooltip({
-                   
-                html: true,
-                track: true, content: "<strong> District Name : " + lstMapDetails[i]['ulbName'] + "</strong><br>Total Property :<strong>" + lstMapDetails[i]['totalHouse'] + "</strong><br>Today Property Scanned :<strong>" + lstMapDetails[i]['totalHouseScan'] + "</strong>"});
+                    show: false,
+                    track: true,
+              content: "<strong> District Name : " + lstMapDetails[i]['ulbName'] + "</strong><br>Total Property :<strong>" + lstMapDetails[i]['totalHouse'] + "</strong><br>Today Property Scanned :<strong>" + lstMapDetails[i]['totalHouseScan'] + "</strong>"});
 
             }
 
         }
 
+          
+        }
+        );*@   @*$(document).ready(function () {
+            //   $('#DataTable').DataTable();
+            // debugger;
+            //var previousText = null;
+            //var set_data = '';
+            //$('[data-toggle="popover"]').popover({
+            //    title: setData,
+            //    html: true,
+            //    container: 'body',
+
+            //});
+            //function setData(id) {
+            //    // debugger;
+            //    var element = $(this);
+            //    var id = element.attr("id");
+            //    var currentText = element.attr("id");
+            //    if (previousText != currentText) {
+            //        $.ajax({
+            //            url: "/MAP/Loaddata?DistrictId=" + id,
+            //            method: "post",
+            //            dataType: 'json',
+            //            async: false,
+            //            data: { id: id },
+            //            success: function (data) {
+            //                //  debugger;
+            //                set_data = data;
+
+            //            }
+            //        });
+
+            //    }
+            //    previousText = currentText;
+            //    return set_data;
+
+            //}
+            debugger;
+        var lstMapDetails = @Html.Raw(Json.Serialize(@Model.ListMapDetails));
+     
+        for (i = 0; i < lstMapDetails.length; i++) {
+            if ($("area[id=" + lstMapDetails[i]['ulbId'] + "]").length)
+            {
+                $("area[id=" + lstMapDetails[i]['ulbId'] + "]").tooltip({
+                    show: false,
+                    track: true,
+              content: "<strong> District Name : " + lstMapDetails[i]['ulbName'] + "</strong><br>Total Property :<strong>" + lstMapDetails[i]['totalHouse'] + "</strong><br>Today Property Scanned :<strong>" + lstMapDetails[i]['totalHouseScan'] + "</strong>"});
+
+            }
 
         }
-        );
 
+          
+        }
+        );*@   @*$(document).ready(function () {
+            //   $('#DataTable').DataTable();
+            // debugger;
+            //var previousText = null;
+            //var set_data = '';
+            //$('[data-toggle="popover"]').popover({
+            //    title: setData,
+            //    html: true,
+            //    container: 'body',
 
+            //});
+            //function setData(id) {
+            //    // debugger;
+            //    var element = $(this);
+            //    var id = element.attr("id");
+            //    var currentText = element.attr("id");
+            //    if (previousText != currentText) {
+            //        $.ajax({
+            //            url: "/MAP/Loaddata?DistrictId=" + id,
+            //            method: "post",
+            //            dataType: 'json',
+            //            async: false,
+            //            data: { id: id },
+            //            success: function (data) {
+            //                //  debugger;
+            //                set_data = data;
 
+            //            }
+            //        });
+
+            //    }
+            //    previousText = currentText;
+            //    return set_data;
+
+            //}
+            debugger;
+        var lstMapDetails = @Html.Raw(Json.Serialize(@Model.ListMapDetails));
+     
+        for (i = 0; i < lstMapDetails.length; i++) {
+            if ($("area[id=" + lstMapDetails[i]['ulbId'] + "]").length)
+            {
+                $("area[id=" + lstMapDetails[i]['ulbId'] + "]").tooltip({
+                    show: false,
+                    track: true,
+              content: "<strong> District Name : " + lstMapDetails[i]['ulbName'] + "</strong><br>Total Property :<strong>" + lstMapDetails[i]['totalHouse'] + "</strong><br>Today Property Scanned :<strong>" + lstMapDetails[i]['totalHouseScan'] + "</strong>"});
+
+            }
+
+        }
+
+          
+        }
+        );*@   @*$(document).ready(function () {
+            //   $('#DataTable').DataTable();
+            // debugger;
+            //var previousText = null;
+            //var set_data = '';
+            //$('[data-toggle="popover"]').popover({
+            //    title: setData,
+            //    html: true,
+            //    container: 'body',
+
+            //});
+            //function setData(id) {
+            //    // debugger;
+            //    var element = $(this);
+            //    var id = element.attr("id");
+            //    var currentText = element.attr("id");
+            //    if (previousText != currentText) {
+            //        $.ajax({
+            //            url: "/MAP/Loaddata?DistrictId=" + id,
+            //            method: "post",
+            //            dataType: 'json',
+            //            async: false,
+            //            data: { id: id },
+            //            success: function (data) {
+            //                //  debugger;
+            //                set_data = data;
+
+            //            }
+            //        });
+
+            //    }
+            //    previousText = currentText;
+            //    return set_data;
+
+            //}
+            debugger;
+        var lstMapDetails = @Html.Raw(Json.Serialize(@Model.ListMapDetails));
+     
+        for (i = 0; i < lstMapDetails.length; i++) {
+            if ($("area[id=" + lstMapDetails[i]['ulbId'] + "]").length)
+            {
+                $("area[id=" + lstMapDetails[i]['ulbId'] + "]").tooltip({
+                    show: false,
+                    track: true,
+              content: "<strong> District Name : " + lstMapDetails[i]['ulbName'] + "</strong><br>Total Property :<strong>" + lstMapDetails[i]['totalHouse'] + "</strong><br>Today Property Scanned :<strong>" + lstMapDetails[i]['totalHouseScan'] + "</strong>"});
+
+            }
+
+        }
+
+          
+        }
+        );*@
+
+      
 
     </script>
     <script>
         $(function () {
             $('.mapq').maphilight();
         });
+        //$('#id').click(function () {
+        //    debugger;
+        //    $('[data-toggle="tooltip"]').tooltip("hide");
 
+        //})
+
+        $(function () {
+        //    debugger;
+        //    //$tooltip = $(document).tooltip({
+        //    //    show: false,
+        //    //    track: true,
+        //    //    items: "area[data-details]",
+        //    //    content: function () {
+        //    //        return $(this).data('details');
+        //    //    }
+        //    //});
+
+
+            $(function () {
+                 var lstMapDetails = @Html.Raw(Json.Serialize(@Model.ListMapDetails));
+
+                for (i = 0; i < lstMapDetails.length; i++) {
+                    $tooltip = $(document).tooltip({
+                        show: false,
+                        track: true,
+                        content: "<strong> District Name : " + lstMapDetails[i]['ulbName'] + "</strong><br>Total Property :<strong>" + lstMapDetails[i]['totalHouse'] + "</strong><br>Today Property Scanned :<strong>" + lstMapDetails[i]['totalHouseScan'] + "</strong>"
+                    });
+                }
+            }
+                });
+
+        $('area[title]').click(function () {
+                    var $this = $(this);
+                    $this.hide();
+                    setTimeout(function () {
+                        $this.show()
+                    }, 1);
+                });
+            });
+
+
+
+
+
+        });
     </script>
     <style type="text/css">
         .border-dark1 {
@@ -153,11 +352,11 @@
             <h4 class="text-center mx-0 bg-danger text-white"> Map of Maharashtra</h4>
             <img src="/Images/GadchiroliMap/Maharashtra.png" usemap="#image-map" id="img_ID" class="mapq" style="width: 100%;">
             <map name="image-map" id="map_ID">
-                <area target="new" id="2012" alt="" title=""   href="/Map/Gadchiroli?DistrictId=2012" coords="764,133,756,134,750,135,747,142,743,147,734,148,717,147,710,151,714,170,712,183,712,194,711,202,717,213,709,220,709,230,712,242,715,254,718,264,715,276,719,283,711,292,716,298,718,308,719,315,727,319,735,325,744,320,750,314,746,304,746,297,746,288,749,281,758,271,766,262,775,264,781,268,789,268,792,262,785,255,796,254,793,248,777,241,777,234,771,229,765,222,760,225,754,224,760,216,756,212,764,211,766,198,754,195,754,187,763,183,771,180,770,174,770,167,772,157,765,158,761,154,767,148,763,142" shape="poly">
-                <area target="new" id="1" alt="Nagpur" title=""   href="/Map/Nagpur?DistrictId=1" coords="567,96,574,93,584,89,586,83,597,82,611,84,626,81,635,73,652,66,662,65,672,66,675,75,671,83,677,88,681,100,680,109,686,123,684,130,677,141,676,147,668,150,663,153,659,158,654,160,647,152,640,146,634,147,629,142,620,133,612,130,608,122,602,113,594,110,585,104,576,100" shape="poly">
-                <area target="new" id="2011" alt="" title=""  href="/Map/Wardha?DistrictId=2011" coords="550,95,559,95,568,97,583,104,592,110,606,122,614,130,625,140,630,145,641,150,651,157,652,165,645,170,637,167,634,172,629,174,622,176,620,181,618,192,612,188,606,184,602,178,598,173,591,170,581,167,573,165,569,156,570,148,572,140,567,136,560,129,558,121,558,114,552,107" shape="poly">
-                <area target="" id="2" alt="Amravati" title=""  href="/Map/Amravati?DistrictId=2" coords="429,98,435,93,437,83,442,77,449,76,456,72,468,63,474,66,482,65,485,58,492,62,500,63,507,71,511,79,505,78,498,77,495,82,498,87,502,93,509,95,512,89,518,95,528,94,540,94,546,89,555,86,561,78,569,75,578,72,581,81,583,88,576,93,567,95,559,95,553,95,549,101,552,109,557,113,558,121,559,130,566,137,569,146,569,154,564,156,556,156,551,160,547,165,542,160,534,166,529,164,522,164,521,158,517,150,514,142,509,138,499,139,490,141,481,140,478,131,478,120,480,108,474,108,467,105,462,107,458,112,451,109,446,108,440,111,435,102" shape="poly">
-                <area target="new" id="2017" alt="palghar" title="" href="/Map/palghar?DistrictId=2017" coords="94,212,101,215,96,204,101,194,108,195,113,189,115,197,121,202,128,202,136,204,145,206,152,210,148,220,156,230,153,236,143,239,137,243,131,249,125,253,119,252,117,257,113,263,108,261,98,260,100,253,98,244,97,236,95,224" shape="poly">
+                <area target="new" id="2012" alt="" data-details=""  target="_blank" href="/Map/Gadchiroli?DistrictId=2012" coords="764,133,756,134,750,135,747,142,743,147,734,148,717,147,710,151,714,170,712,183,712,194,711,202,717,213,709,220,709,230,712,242,715,254,718,264,715,276,719,283,711,292,716,298,718,308,719,315,727,319,735,325,744,320,750,314,746,304,746,297,746,288,749,281,758,271,766,262,775,264,781,268,789,268,792,262,785,255,796,254,793,248,777,241,777,234,771,229,765,222,760,225,754,224,760,216,756,212,764,211,766,198,754,195,754,187,763,183,771,180,770,174,770,167,772,157,765,158,761,154,767,148,763,142" shape="poly">
+                <area target="new" id="1" alt="Nagpur" title="" target="_blank"   href="/Map/Nagpur?DistrictId=1" coords="567,96,574,93,584,89,586,83,597,82,611,84,626,81,635,73,652,66,662,65,672,66,675,75,671,83,677,88,681,100,680,109,686,123,684,130,677,141,676,147,668,150,663,153,659,158,654,160,647,152,640,146,634,147,629,142,620,133,612,130,608,122,602,113,594,110,585,104,576,100" shape="poly">
+                <area target="new" id="2011" alt="" title="" target="_blank"  href="/Map/Wardha?DistrictId=2011" coords="550,95,559,95,568,97,583,104,592,110,606,122,614,130,625,140,630,145,641,150,651,157,652,165,645,170,637,167,634,172,629,174,622,176,620,181,618,192,612,188,606,184,602,178,598,173,591,170,581,167,573,165,569,156,570,148,572,140,567,136,560,129,558,121,558,114,552,107" shape="poly">
+                <area target="" id="2" alt="Amravati" title="" target="_blank" href="/Map/Amravati?DistrictId=2" coords="429,98,435,93,437,83,442,77,449,76,456,72,468,63,474,66,482,65,485,58,492,62,500,63,507,71,511,79,505,78,498,77,495,82,498,87,502,93,509,95,512,89,518,95,528,94,540,94,546,89,555,86,561,78,569,75,578,72,581,81,583,88,576,93,567,95,559,95,553,95,549,101,552,109,557,113,558,121,559,130,566,137,569,146,569,154,564,156,556,156,551,160,547,165,542,160,534,166,529,164,522,164,521,158,517,150,514,142,509,138,499,139,490,141,481,140,478,131,478,120,480,108,474,108,467,105,462,107,458,112,451,109,446,108,440,111,435,102" shape="poly">
+                <area target="new" id="2017" alt="palghar" title=""  target="_blank"href="/Map/palghar?DistrictId=2017" coords="94,212,101,215,96,204,101,194,108,195,113,189,115,197,121,202,128,202,136,204,145,206,152,210,148,220,156,230,153,236,143,239,137,243,131,249,125,253,119,252,117,257,113,263,108,261,98,260,100,253,98,244,97,236,95,224" shape="poly">
                 <area target="new" id="2020" alt="thane" title=""     href="" coords="101,261,109,263,114,259,119,253,126,251,137,244,147,238,157,234,165,243,169,252,175,257,181,265,176,266,171,267,170,274,162,277,158,285,144,282,139,285,134,286,126,283,125,277,119,269" shape="poly">
                 <area target="new" id="2015" alt="Parbhani" title=""  href="/Map/Parbhani?DistrictId=2015" coords="387,272,403,278,405,284,401,291,414,292,413,301,421,302,423,308,428,312,434,318,439,312,447,314,455,311,459,305,449,306,445,291,443,277,441,270,438,260,443,250,450,241,440,240,432,231,434,224,425,226,419,222,414,217,408,218,404,224,404,231,399,232,394,235,399,241,390,242,392,251,391,259,387,267" shape="poly">
                 <area target="new" id="2014" alt="Bhandara" title="" href="/Map/Bhandara?DistrictId=2014" coords="676,76,683,75,692,70,701,74,711,76,705,88,713,94,722,103,725,114,721,119,712,125,704,127,707,136,712,143,710,149,702,145,696,149,689,149,684,148,677,147,680,138,686,131,687,124,682,118,681,111,681,102,683,95,678,91,672,85" shape="poly">
