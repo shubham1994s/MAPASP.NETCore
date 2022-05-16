@@ -20,6 +20,7 @@
     <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
           rel="stylesheet">
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link href="~/css/tooltip.css" rel="stylesheet" />
     <script type="text/javascript">
          $(document).ready(function () {
              debugger;
@@ -31,8 +32,9 @@
                 $("area[id=" + lstMapDetails[i]['ulbId'] + "]").tooltip({
 
                 html: true,
-                track: true, content: "<strong> ULB Name : " + lstMapDetails[i]['ulbName'] + "</strong><br>Total Property :<strong>" + lstMapDetails[i]['totalHouse'] + "</strong><br>Today Property Scanned :<strong>" + lstMapDetails[i]['totalHouseScan'] + "</strong>"});
-
+                track: true,
+                content: "<strong> ULB Name : " + lstMapDetails[i]['ulbName'] + "</strong><br><strong>Total Property : " + lstMapDetails[i]['totalHouse'] + "</strong><br><strong>Today Property Scanned : " + lstMapDetails[i]['totalHouseScan'] + "</strong>"
+                 });
             }
         }
         }
@@ -91,6 +93,8 @@
         .popover-header {
             font-size: 75%;
         }
+
+        
     </style>
 </head>
 

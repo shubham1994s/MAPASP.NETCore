@@ -1,0 +1,25 @@
+﻿.ui-tooltip-content {
+    position: relative;
+    display: inline-block;
+    color: #e9ecef;
+    font-size: 66%;
+}
+
+    .ui-tooltip-content::after {
+        content: "";
+        position: absolute;
+        bottom: 50%;
+        right: 100%;
+        margin-top: -6px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent black transparent transparent;
+        margin-right: 5%;
+    }
+
+.ui-widget-content {
+    border: 1px solid #dddddd;
+    background: rgb(0 0 0 / 90%) url(images/ui-bg_highlight-soft_100_eeeeee_1x100.png) 50% top repeat-x;
+    color: #333333;
+    margin-top: -8%;
+}
