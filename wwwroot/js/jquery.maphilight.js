@@ -380,8 +380,8 @@
 		wrapClass: true,
 		// plenty of shadow:
 		shadow: true,
-		shadowX: 0,
-		shadowY: 0,
+		shadowX: 10,
+		shadowY: 9,
 		shadowRadius: 10,
 		shadowColor: 'f70c0c',
 		shadowOpacity: 0.8,
