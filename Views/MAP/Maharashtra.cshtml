@@ -21,6 +21,7 @@
     <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
           rel="stylesheet">
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link href="~/css/tooltip.css" rel="stylesheet" />
     <script type="text/javascript">
 
       $(document).ready(function () {
@@ -60,36 +61,36 @@
             //}
             debugger;
         var lstMapDetails = @Html.Raw(Json.Serialize(@Model.ListMapDetails));
-     
+
         for (i = 0; i < lstMapDetails.length; i++) {
             if ($("area[id=" + lstMapDetails[i]['ulbId'] + "]").length)
             {
                 $("area[id=" + lstMapDetails[i]['ulbId'] + "]").tooltip({
                     show: false,
                     track: true,
-                 
-                    
+
+
                     content: "<strong> District Name : " + lstMapDetails[i]['ulbName'] + "</strong><br><strong>Total Property : " + lstMapDetails[i]['totalHouse'] + "</strong><br><strong>Today Property Scanned : " + lstMapDetails[i]['totalHouseScan'] + "</strong>"});
 
             }
 
         }
 
-          
+
         }
         );
 
-      
+
 
     </script>
-   
+
     <script>
         $(function () {
             $('.mapq').maphilight();
         });
-       
+
         $(function () {
-       
+
 
             $('area[title]').click(function () {
                 var $this = $(this);
@@ -140,13 +141,14 @@
             font-size: 75%;
         }
 
-      
+
         .ui-tooltip-content {
             position: relative;
             display: inline-block;
             color: #e9ecef;
             font-size: 66%;
         }
+
             .ui-tooltip-content::after {
                 content: "";
                 position: absolute;
@@ -158,13 +160,13 @@
                 border-color: transparent black transparent transparent;
                 margin-right: 5%;
             }
+
         .ui-widget-content {
             border: 1px solid #dddddd;
             background: rgb(0 0 0 / 90%) url(images/ui-bg_highlight-soft_100_eeeeee_1x100.png) 50% top repeat-x;
             color: #333333;
             margin-top: -3%;
         }
-         
     </style>
 </head>
 
