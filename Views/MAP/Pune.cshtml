@@ -25,7 +25,8 @@
     <script type="text/javascript">
           $(document).ready(function () {
              debugger;
-        var lstMapDetails = @Html.Raw(Json.Serialize(@Model.ListMapDetails));
+              var lstMapDetails = @Html.Raw(Json.Serialize(@Model.ListMapDetails));
+              console.log(lstMapDetails)
 
         for (i = 0; i < lstMapDetails.length; i++) {
             if ($("area[id=" + lstMapDetails[i]['ulbId'] + "]").length)
@@ -120,9 +121,10 @@
             <h4 class="text-center mx-0 bg-danger text-white mb-0"> Map of Pune</h4>
             <img src="/Images/GadchiroliMap/pune-tehsil-map.jpg" usemap="#image-map"id="img_ID" class="map" style="width: 100%;">
 
-            <map name="image-map"  id="map_ID">
+            <map name="image-map" id="map_ID">
 
                 <area target="new" alt="indapur" id="3106" title="" href="https://ictsbm.com/?returnUrl=indapurwaste@ulb.com&Type=W" coords="568,604,576,588,575,581,570,569,566,564,571,554,566,549,566,541,566,528,568,517,577,519,585,519,586,502,602,505,604,494,616,496,622,497,624,508,619,510,620,516,625,521,631,526,635,531,645,528,653,529,658,523,664,526,679,522,693,530,707,527,716,523,716,530,708,535,701,542,703,551,708,549,717,549,723,552,727,546,734,542,742,542,745,550,744,556,737,561,734,570,737,579,746,581,754,580,762,583,764,588,757,593,752,597,750,602,742,600,738,604,735,611,730,616,721,621,712,630,705,642,712,654,722,653,727,641,736,643,743,641,744,635,751,639,753,644,746,646,751,650,747,656,740,656,732,657,735,663,732,668,727,664,721,664,722,673,717,671,710,676,703,665,698,666,689,665,684,664,682,659,676,662,676,656,667,655,659,656,653,654,649,650,643,654,639,648,645,644,647,637,641,632,635,634,633,628,625,623,624,631,617,627,611,626,604,623,599,619,588,617,583,619,577,613,576,605,572,607" shape="poly">
+                <area target="" alt="Alandi" id="3077" title="" href="https://ictsbm.com/?returnUrl=alandiwaste@ulb.com&Type=W" coords="237,354,244,348,249,339,258,340,264,343,270,335,275,340,281,336,285,342,279,346,289,347,286,361,273,367,267,358,265,364,261,371,251,370,249,361,241,359" shape="poly">
             </map>
 
         </div>
