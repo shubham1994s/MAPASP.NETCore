@@ -269,6 +269,127 @@ namespace MAPWEBAPP.Controllers
             return View(mapDetail);
         }
 
+        public IActionResult Ahmadnagar(int DivisionId = 0, int DistrictId = 0, int AppId = 0, int UserId = 1)
+        {
+            AdminMapULBDetails mapDetail = new AdminMapULBDetails();
+            List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
+            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+
+            if (data != null && data.Count > 0)
+            {
+                foreach (var item in data)
+                {
+                    mapDetail.TotalHouse += item.TotalHouse ?? 0;
+                    mapDetail.TotalHouseScan += item.TotalHouseScan ?? 0;
+                    mapDetail.TotalLiquid += item.TotalLiquid ?? 0;
+                    mapDetail.TotalLiquidScan += item.TotalLiquidScan ?? 0;
+                    mapDetail.TotalStreet += item.TotalStreet ?? 0;
+                    mapDetail.TotalStreetScan += item.TotalStreetScan ?? 0;
+                    mapDetail.TotalDump += item.TotalDump ?? 0;
+                    mapDetail.TotalDumpScan += item.TotalDumpScan ?? 0;
+
+                }
+                mapDetail.ListMapDetails = data.Select(x => new AdminMapULBDetailsIteam()
+                {
+                    ULBId = x.ULBId,
+                    ULBName = x.ULBName,
+                    TotalHouse = x.TotalHouse,
+                    TotalHouseScan = x.TotalHouseScan,
+                    TotalLiquid = x.TotalLiquid,
+                    TotalLiquidScan = x.TotalLiquidScan,
+                    TotalStreet = x.TotalStreet,
+                    TotalStreetScan = x.TotalStreetScan,
+                    TotalDump = x.TotalDump,
+                    TotalDumpScan = x.TotalDumpScan,
+                    ParentULB = x.ParentULB
+                })
+                .ToList();
+            }
+            return View(mapDetail);
+        }
+
+        public IActionResult Chandrapur(int DivisionId = 0, int DistrictId = 0, int AppId = 0, int UserId = 1)
+        {
+            AdminMapULBDetails mapDetail = new AdminMapULBDetails();
+            List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
+            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+
+            if (data != null && data.Count > 0)
+            {
+                foreach (var item in data)
+                {
+                    mapDetail.TotalHouse += item.TotalHouse ?? 0;
+                    mapDetail.TotalHouseScan += item.TotalHouseScan ?? 0;
+                    mapDetail.TotalLiquid += item.TotalLiquid ?? 0;
+                    mapDetail.TotalLiquidScan += item.TotalLiquidScan ?? 0;
+                    mapDetail.TotalStreet += item.TotalStreet ?? 0;
+                    mapDetail.TotalStreetScan += item.TotalStreetScan ?? 0;
+                    mapDetail.TotalDump += item.TotalDump ?? 0;
+                    mapDetail.TotalDumpScan += item.TotalDumpScan ?? 0;
+
+                }
+                mapDetail.ListMapDetails = data.Select(x => new AdminMapULBDetailsIteam()
+                {
+                    ULBId = x.ULBId,
+                    ULBName = x.ULBName,
+                    TotalHouse = x.TotalHouse,
+                    TotalHouseScan = x.TotalHouseScan,
+                    TotalLiquid = x.TotalLiquid,
+                    TotalLiquidScan = x.TotalLiquidScan,
+                    TotalStreet = x.TotalStreet,
+                    TotalStreetScan = x.TotalStreetScan,
+                    TotalDump = x.TotalDump,
+                    TotalDumpScan = x.TotalDumpScan,
+                    ParentULB = x.ParentULB
+                })
+                .ToList();
+            }
+            return View(mapDetail);
+        }
+
+        public IActionResult Nashik(int DivisionId = 0, int DistrictId = 0, int AppId = 0, int UserId = 1)
+        {
+            AdminMapULBDetails mapDetail = new AdminMapULBDetails();
+            List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
+            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+
+            if (data != null && data.Count > 0)
+            {
+                foreach (var item in data)
+                {
+                    mapDetail.TotalHouse += item.TotalHouse ?? 0;
+                    mapDetail.TotalHouseScan += item.TotalHouseScan ?? 0;
+                    mapDetail.TotalLiquid += item.TotalLiquid ?? 0;
+                    mapDetail.TotalLiquidScan += item.TotalLiquidScan ?? 0;
+                    mapDetail.TotalStreet += item.TotalStreet ?? 0;
+                    mapDetail.TotalStreetScan += item.TotalStreetScan ?? 0;
+                    mapDetail.TotalDump += item.TotalDump ?? 0;
+                    mapDetail.TotalDumpScan += item.TotalDumpScan ?? 0;
+
+                }
+                mapDetail.ListMapDetails = data.Select(x => new AdminMapULBDetailsIteam()
+                {
+                    ULBId = x.ULBId,
+                    ULBName = x.ULBName,
+                    TotalHouse = x.TotalHouse,
+                    TotalHouseScan = x.TotalHouseScan,
+                    TotalLiquid = x.TotalLiquid,
+                    TotalLiquidScan = x.TotalLiquidScan,
+                    TotalStreet = x.TotalStreet,
+                    TotalStreetScan = x.TotalStreetScan,
+                    TotalDump = x.TotalDump,
+                    TotalDumpScan = x.TotalDumpScan,
+                    ParentULB = x.ParentULB
+                })
+                .ToList();
+            }
+            return View(mapDetail);
+        }
+
+
         public IActionResult Amravati(int DivisionId = 0, int DistrictId = 0, int AppId = 0, int UserId = 1)
         {
             AdminMapULBDetails mapDetail = new AdminMapULBDetails();
