@@ -34,7 +34,7 @@
                 $("area[id=" + lstMapDetails[i]['ulbId'] + "]").tooltip({
 
                 html: true,
-                    track: true, content: "<strong> ULB Name : " + lstMapDetails[i]['ulbName'] + "</strong><br><strong>Total Property : " + lstMapDetails[i]['totalHouse'] + "</strong><br><strong>Today Property Scanned : " + lstMapDetails[i]['totalHouseScan'] + "</strong>"
+                    track: true, content: "<strong> ULB Name : " + lstMapDetails[i]['ulbName'] + "</strong><br><strong>Total House Count : " + lstMapDetails[i]['totalHouse'] + "</strong><br><strong>Today House Scanned : " + lstMapDetails[i]['totalHouseScan'] + "</strong>"
                 });
 
             }
@@ -45,12 +45,14 @@
     </script>
     <script type="text/javascript">
         $(function () {
+            debugger;
             $('.map').maphilight();
         });
         $(function () {
 
 
             $('area[title]').click(function () {
+                debugger;
                 var $this = $(this);
                 $this.blur();
                 setTimeout(function () {
@@ -105,7 +107,7 @@
                 <h5>Total Pune Property</h5>
 
                 <ul class="list-group">
-                    <li class="list-group-item head-color">Total Property Count</li>
+                    <li class="list-group-item head-color">Total House Count Count</li>
                     <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.TotalHouse</li>
                     <li class="list-group-item head-color">Total Liquid Count</li>
                     <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalLiquid</li>
@@ -124,7 +126,9 @@
             <map name="image-map" id="map_ID">
 
                 <area target="new" alt="indapur" id="3106" title="" href="https://ictsbm.com/?returnUrl=indapurwaste@ulb.com&Type=W" coords="568,604,576,588,575,581,570,569,566,564,571,554,566,549,566,541,566,528,568,517,577,519,585,519,586,502,602,505,604,494,616,496,622,497,624,508,619,510,620,516,625,521,631,526,635,531,645,528,653,529,658,523,664,526,679,522,693,530,707,527,716,523,716,530,708,535,701,542,703,551,708,549,717,549,723,552,727,546,734,542,742,542,745,550,744,556,737,561,734,570,737,579,746,581,754,580,762,583,764,588,757,593,752,597,750,602,742,600,738,604,735,611,730,616,721,621,712,630,705,642,712,654,722,653,727,641,736,643,743,641,744,635,751,639,753,644,746,646,751,650,747,656,740,656,732,657,735,663,732,668,727,664,721,664,722,673,717,671,710,676,703,665,698,666,689,665,684,664,682,659,676,662,676,656,667,655,659,656,653,654,649,650,643,654,639,648,645,644,647,637,641,632,635,634,633,628,625,623,624,631,617,627,611,626,604,623,599,619,588,617,583,619,577,613,576,605,572,607" shape="poly">
-                <area target="" alt="Alandi" id="3077" title="" href="https://ictsbm.com/?returnUrl=alandiwaste@ulb.com&Type=W" coords="237,354,244,348,249,339,258,340,264,343,270,335,275,340,281,336,285,342,279,346,289,347,286,361,273,367,267,358,265,364,261,371,251,370,249,361,241,359" shape="poly">
+                <area target="new" alt="Alandi" id="3077" title="" href="https://ictsbm.com/?returnUrl=alandiwaste@ulb.com&Type=W" coords="237,354,244,348,249,339,258,340,264,343,270,335,275,340,281,336,285,342,279,346,289,347,286,361,273,367,267,358,265,364,261,371,251,370,249,361,241,359" shape="poly">
+                <area target="new" alt="Daund" id="3119" title="" href="https://ictsbm.com/?returnUrl=daundwaste@ulb.com&Type=W" coords="363,452,364,437,366,427,372,425,377,414,378,406,372,396,372,387,378,383,384,375,392,369,394,359,401,355,413,351,417,358,413,369,420,366,430,369,431,376,433,385,439,390,445,395,455,395,463,393,470,393,477,397,480,405,486,407,492,411,495,403,503,406,504,415,504,423,511,424,523,418,528,426,537,432,547,436,557,442,568,442,566,433,572,424,580,420,587,422,592,431,592,441,591,451,596,460,608,462,603,465,615,462,621,466,624,474,622,481,630,486,639,498,638,506,625,505,621,495,615,490,607,491,601,495,601,501,591,501,578,501,564,500,555,499,550,486,542,482,535,484,526,488,517,492,510,495,498,491,482,485,471,479,463,481,458,483,451,475,444,467,437,472,431,474,422,467,421,460,422,451,416,447,408,450,393,453,384,450,376,450,370,454" shape="poly">
+               
             </map>
 
         </div>
@@ -134,7 +138,7 @@
             <div class="border border-dark1 ml-4 mt-5 rounded">
                 <h5>Today Total Scan Pune Property</h5>
                 <ul class="list-group">
-                    <li class="list-group-item head-color">Today Scan Property Count</li>
+                    <li class="list-group-item head-color">Today Scan House Count</li>
                     <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.TotalHouseScan</li>
                     <li class="list-group-item head-color">Today Scan Liquid Count</li>
                     <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i> @Model.TotalLiquidScan</li>
@@ -154,6 +158,7 @@
 </html>
 <script>
     window.onload = function () {
+        debugger;
         var ImageMap = function (map, img) {
             var n,
                 areas = map.getElementsByTagName('area'),

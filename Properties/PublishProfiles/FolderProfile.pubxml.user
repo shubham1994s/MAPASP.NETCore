@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\LiveServer\Publish\MAPWEBAPP</_PublishTargetUrl>
+    <History>True|2022-05-24T22:16:45.1901935Z;True|2022-05-24T15:05:35.3445934-07:00;True|2022-05-24T15:04:32.6892517-07:00;True|2022-05-24T14:50:11.5671576-07:00;True|2022-05-17T15:00:05.5628029-07:00;True|2022-05-17T14:59:15.3127181-07:00;True|2022-05-16T14:43:09.9828317-07:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>05/18/2022 10:45:54</publishTime>
+    </File>
+    <File Include="Views/Home/Privacy.cshtml">
+      <publishTime>05/03/2022 11:52:13</publishTime>
+    </File>
+    <File Include="Views/MAP/Amravati.cshtml">
+      <publishTime>05/16/2022 13:22:17</publishTime>
+    </File>
+    <File Include="Views/MAP/Bhandara.cshtml">
+      <publishTime>05/16/2022 13:22:19</publishTime>
+    </File>
+    <File Include="Views/MAP/Gadchiroli.cshtml">
+      <publishTime>05/16/2022 13:22:19</publishTime>
+    </File>
+    <File Include="Views/MAP/Gondia.cshtml">
+      <publishTime>05/16/2022 13:22:19</publishTime>
+    </File>
+    <File Include="Views/MAP/Index.cshtml">
+      <publishTime>05/03/2022 18:24:53</publishTime>
+    </File>
+    <File Include="Views/MAP/Khamgaon.cshtml">
+      <publishTime>05/16/2022 13:22:19</publishTime>
+    </File>
+    <File Include="Views/MAP/Maharashtra.cshtml">
+      <publishTime>05/17/2022 12:47:29</publishTime>
+    </File>
+    <File Include="Views/MAP/Nagpur.cshtml">
+      <publishTime>05/16/2022 13:22:19</publishTime>
+    </File>
+    <File Include="Views/MAP/palghar.cshtml">
+      <publishTime>05/16/2022 13:22:19</publishTime>
+    </File>
+    <File Include="Views/MAP/Parbhani.cshtml">
+      <publishTime>05/16/2022 13:22:19</publishTime>
+    </File>
+    <File Include="Views/MAP/Pune.cshtml">
+      <publishTime>05/24/2022 14:59:45</publishTime>
+    </File>
+    <File Include="Views/MAP/Solapur.cshtml">
+      <publishTime>05/16/2022 13:16:57</publishTime>
+    </File>
+    <File Include="Views/MAP/Wardha.cshtml">
+      <publishTime>05/16/2022 13:22:14</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>05/03/2022 11:52:13</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>05/24/2022 14:59:45</publishTime>
+    </File>
+    <File Include="Views/Shared/_ValidationScriptsPartial.cshtml">
+      <publishTime>05/03/2022 11:52:13</publishTime>
+    </File>
+    <File Include="Views/_ViewImports.cshtml">
+      <publishTime>05/03/2022 11:52:12</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>05/03/2022 11:52:12</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

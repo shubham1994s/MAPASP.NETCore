@@ -68,5 +68,22 @@ namespace MAPWEBAPP.Models
         public bool? TodayStreetStatus { get; set; }
         public int? UlbProperty { get; set; }
         public int? AddUlbProperty { get; set; }
+
+        public int? Today_HouseScanCount { get; set; }
+
+        public int? Today_LiquidScanCount { get; set; }
+        public int? Today_StreetScanCount { get; set; }
+
+        public int? Total_HouseCount { get; set; }
+
+
+        public int? Total_LiquidCount { get; set; }
+
+        public int? Total_StreetCount { get; set; }
+
+        public int? Total_DumpCount { get; set; }
+
+        public int? Today_DumpScanCount { get; set; }
+
     }
 }

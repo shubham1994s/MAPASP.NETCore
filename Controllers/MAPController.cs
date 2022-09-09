@@ -35,7 +35,6 @@ namespace MAPWEBAPP.Controllers
 
         public IActionResult Maharashtra(int DivisionId = 0, int DistrictId = 0, int AppId = 0, int UserId = 1)
 
-
         {
             //  string StoredProcM = "exec SP_MAPS_ScanDETAILS " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = '" + DistrictId + "'," + "@AppIdIN= '" + AppId + "'," + "@UserId= '" + UserId + "'";
             //var dataM = _context.SP_MAPS_ScanDETAILS.FromSqlRaw(StoredProcM).ToList();
@@ -52,9 +51,9 @@ namespace MAPWEBAPP.Controllers
 
             AdminMapULBDetails mapDetail = new AdminMapULBDetails();
             List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
-            //  string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = '" + DistrictId + "'," + "@AppIdIN= '" + AppId + "'," + "@UserId= '" + UserId + "'";
-            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
-            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+
+            string StoredProc = "exec SP_ULBADMINMAPAPP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAPAPP.FromSqlRaw(StoredProc).ToList();
 
             if (data != null && data.Count > 0)
             {
@@ -68,6 +67,7 @@ namespace MAPWEBAPP.Controllers
                     mapDetail.TotalStreetScan += item.TotalStreetScan ?? 0;
                     mapDetail.TotalDump += item.TotalDump ?? 0;
                     mapDetail.TotalDumpScan += item.TotalDumpScan ?? 0;
+
 
                 }
                 mapDetail.ListMapDetails = data.Select(x => new AdminMapULBDetailsIteam()
@@ -83,9 +83,11 @@ namespace MAPWEBAPP.Controllers
                     TotalDump = x.TotalDump,
                     TotalDumpScan = x.TotalDumpScan,
                     ParentULB = x.ParentULB
+
                 })
-                .ToList();
+               .ToList();
             }
+
             return View(mapDetail);
         }
 
@@ -99,11 +101,11 @@ namespace MAPWEBAPP.Controllers
             var House = "";
             if (DistrictId != 0)
             {
-                House = "District Name : " + DistrictName + "<br/>" + "Total Property : " + data.AsEnumerable().Sum(r => r.TotalProperty).ToString() + "<br/>" + "Today Property Scan : " + data.AsEnumerable().Sum(r => r.TotalProperty_Scan).ToString();
+                House = "District Name : " + DistrictName + "<br/>" + "Total House Count : " + data.AsEnumerable().Sum(r => r.TotalProperty).ToString() + "<br/>" + "Today Property Scan : " + data.AsEnumerable().Sum(r => r.TotalProperty_Scan).ToString();
             }
             if (AppId != 0)
             {
-                House = "Ulb Name : " + AppName + "<br/>" + "Total Property : " + data.AsEnumerable().Sum(r => r.TotalProperty).ToString() + "<br/>" + "Today Property Scan : " + data.AsEnumerable().Sum(r => r.TotalProperty_Scan).ToString();
+                House = "Ulb Name : " + AppName + "<br/>" + "Total House Count : " + data.AsEnumerable().Sum(r => r.TotalProperty).ToString() + "<br/>" + "Today Property Scan : " + data.AsEnumerable().Sum(r => r.TotalProperty_Scan).ToString();
             }
 
             return Json(House);
@@ -114,8 +116,8 @@ namespace MAPWEBAPP.Controllers
         {
             AdminMapULBDetails mapDetail = new AdminMapULBDetails();
             List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
-            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
-            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+            string StoredProc = "exec SP_ULBADMINMAPAPP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAPAPP.FromSqlRaw(StoredProc).ToList();
 
             if (data != null && data.Count > 0)
             {
@@ -154,8 +156,8 @@ namespace MAPWEBAPP.Controllers
         {
             AdminMapULBDetails mapDetail = new AdminMapULBDetails();
             List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
-            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
-            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+            string StoredProc = "exec SP_ULBADMINMAPAPP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAPAPP.FromSqlRaw(StoredProc).ToList();
 
             if (data != null && data.Count > 0)
             {
@@ -194,8 +196,8 @@ namespace MAPWEBAPP.Controllers
         {
             AdminMapULBDetails mapDetail = new AdminMapULBDetails();
             List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
-            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
-            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+            string StoredProc = "exec SP_ULBADMINMAPAPP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAPAPP.FromSqlRaw(StoredProc).ToList();
 
             if (data != null && data.Count > 0)
             {
@@ -233,8 +235,8 @@ namespace MAPWEBAPP.Controllers
         {
             AdminMapULBDetails mapDetail = new AdminMapULBDetails();
             List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
-            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
-            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+            string StoredProc = "exec SP_ULBADMINMAPThane " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAPThane.FromSqlRaw(StoredProc).ToList();
 
             if (data != null && data.Count > 0)
             {
@@ -248,6 +250,13 @@ namespace MAPWEBAPP.Controllers
                     mapDetail.TotalStreetScan += item.TotalStreetScan ?? 0;
                     mapDetail.TotalDump += item.TotalDump ?? 0;
                     mapDetail.TotalDumpScan += item.TotalDumpScan ?? 0;
+                    mapDetail.TotalCTPT += item.TotalCTPT ?? 0;
+                    mapDetail.TotalCTPTScan += item.TotalCTPTScan ?? 0;
+                    mapDetail.TotalCommercial += item.TotalCommercial ?? 0;
+                    mapDetail.TotalCommercialScan += item.TotalCommercialScan ?? 0;
+                    mapDetail.TotalSWM += item.TotalSWM ?? 0;
+                    mapDetail.TotalSWMScan += item.TotalSWMScan ?? 0;
+
 
                 }
                 mapDetail.ListMapDetails = data.Select(x => new AdminMapULBDetailsIteam()
@@ -262,6 +271,12 @@ namespace MAPWEBAPP.Controllers
                     TotalStreetScan = x.TotalStreetScan,
                     TotalDump = x.TotalDump,
                     TotalDumpScan = x.TotalDumpScan,
+                    TotalCTPT = x.TotalCTPT,
+                    TotalCTPTScan = x.TotalCTPTScan,
+                    TotalCommercial = x.TotalCommercial,
+                    TotalCommercialScan = x.TotalCommercialScan,
+                    TotalSWM = x.TotalSWM,
+                    TotalSWMScan = x.TotalSWMScan,
                     ParentULB = x.ParentULB
                 })
                 .ToList();
@@ -273,8 +288,8 @@ namespace MAPWEBAPP.Controllers
         {
             AdminMapULBDetails mapDetail = new AdminMapULBDetails();
             List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
-            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
-            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+            string StoredProc = "exec SP_ULBADMINMAPAPP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAPAPP.FromSqlRaw(StoredProc).ToList();
 
             if (data != null && data.Count > 0)
             {
@@ -313,8 +328,8 @@ namespace MAPWEBAPP.Controllers
         {
             AdminMapULBDetails mapDetail = new AdminMapULBDetails();
             List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
-            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
-            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+            string StoredProc = "exec SP_ULBADMINMAPAPP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAPAPP.FromSqlRaw(StoredProc).ToList();
 
             if (data != null && data.Count > 0)
             {
@@ -353,8 +368,8 @@ namespace MAPWEBAPP.Controllers
         {
             AdminMapULBDetails mapDetail = new AdminMapULBDetails();
             List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
-            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
-            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+            string StoredProc = "exec SP_ULBADMINMAPAPP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAPAPP.FromSqlRaw(StoredProc).ToList();
 
             if (data != null && data.Count > 0)
             {
@@ -394,8 +409,8 @@ namespace MAPWEBAPP.Controllers
         {
             AdminMapULBDetails mapDetail = new AdminMapULBDetails();
             List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
-            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
-            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+            string StoredProc = "exec SP_ULBADMINMAPAPP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAPAPP.FromSqlRaw(StoredProc).ToList();
 
             if (data != null && data.Count > 0)
             {
@@ -433,8 +448,8 @@ namespace MAPWEBAPP.Controllers
         {
             AdminMapULBDetails mapDetail = new AdminMapULBDetails();
             List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
-            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
-            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+            string StoredProc = "exec SP_ULBADMINMAPAPP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAPAPP.FromSqlRaw(StoredProc).ToList();
 
             if (data != null && data.Count > 0)
             {
@@ -473,8 +488,8 @@ namespace MAPWEBAPP.Controllers
         {
             AdminMapULBDetails mapDetail = new AdminMapULBDetails();
             List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
-            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
-            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+            string StoredProc = "exec SP_ULBADMINMAPAPP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAPAPP.FromSqlRaw(StoredProc).ToList();
 
             if (data != null && data.Count > 0)
             {
@@ -513,8 +528,8 @@ namespace MAPWEBAPP.Controllers
         {
             AdminMapULBDetails mapDetail = new AdminMapULBDetails();
             List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
-            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
-            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+            string StoredProc = "exec SP_ULBADMINMAPAPP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAPAPP.FromSqlRaw(StoredProc).ToList();
 
             if (data != null && data.Count > 0)
             {
@@ -552,8 +567,8 @@ namespace MAPWEBAPP.Controllers
         {
             AdminMapULBDetails mapDetail = new AdminMapULBDetails();
             List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
-            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
-            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+            string StoredProc = "exec SP_ULBADMINMAPAPP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAPAPP.FromSqlRaw(StoredProc).ToList();
 
             if (data != null && data.Count > 0)
             {
@@ -591,8 +606,8 @@ namespace MAPWEBAPP.Controllers
         {
             AdminMapULBDetails mapDetail = new AdminMapULBDetails();
             List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
-            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
-            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+            string StoredProc = "exec SP_ULBADMINMAPAPP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAPAPP.FromSqlRaw(StoredProc).ToList();
 
             if (data != null && data.Count > 0)
             {
@@ -630,8 +645,8 @@ namespace MAPWEBAPP.Controllers
         {
             AdminMapULBDetails mapDetail = new AdminMapULBDetails();
             List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
-            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
-            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+            string StoredProc = "exec SP_ULBADMINMAPAPP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAPAPP.FromSqlRaw(StoredProc).ToList();
 
             if (data != null && data.Count > 0)
             {
@@ -670,8 +685,8 @@ namespace MAPWEBAPP.Controllers
         {
             AdminMapULBDetails mapDetail = new AdminMapULBDetails();
             List<AdminMapULBDetailsIteam> ListMapItems = new List<AdminMapULBDetailsIteam>();
-            string StoredProc = "exec SP_ULBADMINMAP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
-            var data = _context.SP_ULBADMINMAP.FromSqlRaw(StoredProc).ToList();
+            string StoredProc = "exec SP_ULBADMINMAPAPP " + "@DivisionIdIn = " + DivisionId + "," + "@DistrictIdIn = " + DistrictId + "," + "@AppIdIN= " + AppId + "," + "@UserId= " + UserId + "";
+            var data = _context.SP_ULBADMINMAPAPP.FromSqlRaw(StoredProc).ToList();
 
             if (data != null && data.Count > 0)
             {

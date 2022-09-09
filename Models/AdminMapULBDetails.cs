@@ -18,6 +18,14 @@ namespace MAPWEBAPP.Models
         public Nullable<int> TotalStreetScan { get; set; } = 0;
         public Nullable<int> TotalDump { get; set; } = 0;
         public Nullable<int> TotalDumpScan { get; set; } = 0;
+        public Nullable<int> Tehsil { get; set; } = 0;
+
+        public Nullable<int> TotalCTPT { get; set; } = 0;
+        public Nullable<int> TotalCTPTScan { get; set; } = 0;
+        public Nullable<int> TotalSWM { get; set; } = 0;
+        public Nullable<int> TotalSWMScan { get; set; } = 0;
+        public Nullable<int> TotalCommercial { get; set; } = 0;
+        public Nullable<int> TotalCommercialScan { get; set; } = 0;
 
         public List<AdminMapULBDetailsIteam> ListMapDetails { get; set; }
 
@@ -37,6 +45,13 @@ namespace MAPWEBAPP.Models
         public Nullable<int> TotalStreetScan { get; set; } = 0;
         public Nullable<int> TotalDump { get; set; } = 0;
         public Nullable<int> TotalDumpScan { get; set; } = 0;
+        public Nullable<int> TotalCTPT { get; set; } = 0;
+        public Nullable<int> TotalCTPTScan { get; set; } = 0;
+        public Nullable<int> TotalSWM { get; set; } = 0;
+        public Nullable<int> TotalSWMScan { get; set; } = 0;
+        public Nullable<int> TotalCommercial { get; set; } = 0;
+        public Nullable<int> TotalCommercialScan { get; set; } = 0;
+        public Nullable<int> Tehsil { get; set; } = 0;
 
 
     }

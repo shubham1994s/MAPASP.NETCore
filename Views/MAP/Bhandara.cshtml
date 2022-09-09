@@ -34,7 +34,7 @@
                 $("area[id=" + lstMapDetails[i]['ulbId'] + "]").tooltip({
 
                 html: true,
-                    track: true, content: "<strong> ULB Name : " + lstMapDetails[i]['ulbName'] + "</strong><br><strong>Total Property : " + lstMapDetails[i]['totalHouse'] + "</strong><br><strong>Today Property Scanned : " + lstMapDetails[i]['totalHouseScan'] + "</strong>"
+                    track: true, content: "<strong> ULB Name : " + lstMapDetails[i]['ulbName'] + "</strong><br><strong>Total House Count : " + lstMapDetails[i]['totalHouse'] + "</strong><br><strong>Today House Scanned : " + lstMapDetails[i]['totalHouseScan'] + "</strong>"
                 });
 
             }
@@ -105,7 +105,7 @@
                 <h5>Total Bhandara Property</h5>
 
                 <ul class="list-group">
-                    <li class="list-group-item head-color">Total Property Count</li>
+                    <li class="list-group-item head-color">Total House Count Count</li>
                     <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.TotalHouse</li>
                     <li class="list-group-item head-color">Total Liquid Count</li>
                     <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalLiquid</li>
@@ -133,7 +133,7 @@
             <div class="border border-dark1 ml-4 mt-5 rounded">
                 <h5>Today Total Scan Bhandara Property</h5>
                 <ul class="list-group">
-                    <li class="list-group-item head-color">Today Scan Property Count</li>
+                    <li class="list-group-item head-color">Today Scan House Count</li>
                     <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.TotalHouseScan</li>
                     <li class="list-group-item head-color">Today Scan Liquid Count</li>
                     <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i> @Model.TotalLiquidScan</li>

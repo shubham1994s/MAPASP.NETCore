@@ -34,7 +34,7 @@
                 $("area[id=" + lstMapDetails[i]['ulbId'] + "]").tooltip({
 
                 html: true,
-                    track: true, content: "<strong> ULB Name : " + lstMapDetails[i]['ulbName'] + "</strong><br><strong>Total Property : " + lstMapDetails[i]['totalHouse'] + "</strong><br><strong>Today Property Scanned : " + lstMapDetails[i]['totalHouseScan'] + "</strong>"
+                    track: true, content: "<strong> ULB Name : " + lstMapDetails[i]['ulbName'] + "</strong><br><strong>Total House Count : " + lstMapDetails[i]['totalHouse'] + "</strong><br><strong>Today House Scanned : " + lstMapDetails[i]['totalHouseScan'] + "</strong>"
                 });
 
             }
@@ -105,7 +105,7 @@
                 <h5>Total Nashik Property</h5>
 
                 <ul class="list-group">
-                    <li class="list-group-item head-color">Total Property Count</li>
+                    <li class="list-group-item head-color">Total House Count Count</li>
                     <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.TotalHouse</li>
                     <li class="list-group-item head-color">Total Liquid Count</li>
                     <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalLiquid</li>
@@ -123,8 +123,8 @@
             <img src="/Images/GadchiroliMap/nashik-tehsil-map.jpg" usemap="#image-map" id="img_ID"class="map" style="width: 100%;">
 
             <map name="image-map" id="map_ID">
-                <area target="" alt="Chandwad" title="Chandwad" href="" coords="330,326,336,320,334,313,337,297,344,302,350,306,357,304,364,307,367,296,374,296,382,298,391,299,398,302,406,302,415,303,422,296,426,302,434,299,440,296,449,291,456,287,463,290,473,286,481,293,488,296,497,297,500,303,508,307,517,307,518,314,524,322,532,319,541,320,539,311,550,307,562,305,573,307,577,314,575,326,570,339,568,348,558,350,550,353,545,358,546,365,549,382,546,389,537,384,525,380,518,388,522,399,517,404,511,404,505,399,497,399,498,406,484,406,477,404,472,400,467,392,459,394,449,397,445,385,434,384,426,379,416,380,411,371,398,368,395,376,387,376,377,380,363,380,356,382,352,374,358,370,362,360,363,353,352,348,346,350,345,339,340,344,331,336" shape="poly">
-                <area target="" alt="yevla" title="yevla" href="" coords="482,408,490,409,497,410,501,403,510,407,521,405,523,398,520,390,525,384,535,387,542,391,551,388,559,390,569,385,579,384,585,394,591,393,595,398,604,393,611,393,618,398,625,396,629,387,640,394,649,387,661,384,680,383,687,394,686,405,684,414,682,421,689,427,694,435,692,442,685,442,687,454,683,461,687,473,678,473,674,482,672,492,666,498,667,505,657,506,648,504,637,503,627,501,621,504,610,496,602,493,597,498,589,495,580,498,580,492,575,488,568,488,566,493,556,494,549,493,538,490,532,494,523,498,518,491,505,488,508,479,499,479,492,477,489,469,503,467,497,463,490,463,486,458,492,457,499,451,508,449,510,443,505,442,502,436,496,433,499,426,499,418,489,415" shape="poly">
+                <area target="" alt="Chandwad" id="3123" title="Chandwad" href="" coords="330,326,336,320,334,313,337,297,344,302,350,306,357,304,364,307,367,296,374,296,382,298,391,299,398,302,406,302,415,303,422,296,426,302,434,299,440,296,449,291,456,287,463,290,473,286,481,293,488,296,497,297,500,303,508,307,517,307,518,314,524,322,532,319,541,320,539,311,550,307,562,305,573,307,577,314,575,326,570,339,568,348,558,350,550,353,545,358,546,365,549,382,546,389,537,384,525,380,518,388,522,399,517,404,511,404,505,399,497,399,498,406,484,406,477,404,472,400,467,392,459,394,449,397,445,385,434,384,426,379,416,380,411,371,398,368,395,376,387,376,377,380,363,380,356,382,352,374,358,370,362,360,363,353,352,348,346,350,345,339,340,344,331,336" shape="poly">
+                @*<area target="" alt="yevla" title="yevla" href="" coords="482,408,490,409,497,410,501,403,510,407,521,405,523,398,520,390,525,384,535,387,542,391,551,388,559,390,569,385,579,384,585,394,591,393,595,398,604,393,611,393,618,398,625,396,629,387,640,394,649,387,661,384,680,383,687,394,686,405,684,414,682,421,689,427,694,435,692,442,685,442,687,454,683,461,687,473,678,473,674,482,672,492,666,498,667,505,657,506,648,504,637,503,627,501,621,504,610,496,602,493,597,498,589,495,580,498,580,492,575,488,568,488,566,493,556,494,549,493,538,490,532,494,523,498,518,491,505,488,508,479,499,479,492,477,489,469,503,467,497,463,490,463,486,458,492,457,499,451,508,449,510,443,505,442,502,436,496,433,499,426,499,418,489,415" shape="poly">*@
             </map>
         </div>
 
@@ -133,7 +133,7 @@
             <div class="border border-dark1 ml-4 mt-5 rounded">
                 <h5>Today Total Scan Wardha Property</h5>
                 <ul class="list-group">
-                    <li class="list-group-item head-color">Today Scan Property Count</li>
+                    <li class="list-group-item head-color">Today Scan House Count</li>
                     <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.TotalHouseScan</li>
                     <li class="list-group-item head-color">Today Scan Liquid Count</li>
                     <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i> @Model.TotalLiquidScan</li>
