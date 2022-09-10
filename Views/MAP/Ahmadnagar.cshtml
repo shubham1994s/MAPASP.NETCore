@@ -1,0 +1,184 @@
+﻿@model MAPWEBAPP.Models.AdminMapULBDetails
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery.maphilight.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+          rel="stylesheet">
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link href="~/css/tooltip.css" rel="stylesheet" />
+    <script type="text/javascript">
+
+         $(document).ready(function () {
+             debugger;
+        var lstMapDetails = @Html.Raw(Json.Serialize(@Model.ListMapDetails));
+
+        for (i = 0; i < lstMapDetails.length; i++) {
+            if ($("area[id=" + lstMapDetails[i]['ulbId'] + "]").length)
+            {
+                $("area[id=" + lstMapDetails[i]['ulbId'] + "]").tooltip({
+
+                html: true,
+                    track: true, content: "<strong> ULB Name : " + lstMapDetails[i]['ulbName'] + "</strong><br><strong>Total House Count : " + lstMapDetails[i]['totalHouse'] + "</strong><br><strong>Today House Scanned : " + lstMapDetails[i]['totalHouseScan'] + "</strong>"
+                });
+
+            }
+        }
+        }
+        );
+
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $('.map').maphilight();
+        });
+        $(function () {
+
+
+            $('area[title]').click(function () {
+                var $this = $(this);
+                $this.blur();
+                setTimeout(function () {
+                    $this.show()
+                }, 1);
+            });
+
+        });
+    </script>
+    <style type="text/css">
+        .border-dark1 {
+            border-color: #c2c2c2;
+        }
+
+        .head-color {
+            background: #065d96;
+            color: white;
+        }
+
+        .list-group-item {
+            padding: .5rem 1.25rem;
+        }
+
+        .count-color {
+            background: #e8e8e8;
+        }
+
+        body {
+            background: #fff;
+            ;
+        }
+
+        .bg-footer {
+            background: #0d3845;
+        }
+
+        .bg-black {
+            background: #000
+        }
+
+        .popover-header {
+            font-size: 75%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d-flex">
+        <!-- Count List -->
+        <div class="mr-5">
+            <div class="border border-dark1 ml-4 mt-5 rounded">
+                <h5>Total Ahmadnagar Property</h5>
+
+                <ul class="list-group">
+                    <li class="list-group-item head-color">Total House Count Count</li>
+                    <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.TotalHouse</li>
+                    <li class="list-group-item head-color">Total Liquid Count</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalLiquid</li>
+                    <li class="list-group-item head-color">Total Street Count</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalStreet</li>
+                    <li class="list-group-item head-color">Total Dump Count</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalDump</li>
+                </ul>
+
+            </div>
+        </div>
+        <!-- ImageMap Start -->
+        <div class="border border-dark rounded">
+            <h4 class="text-center mx-0 bg-danger text-white mb-0"> Map of Ahmadnagar</h4>
+            <img src="/Images/GadchiroliMap/ahmadnagar-tehsil-map.jpg" usemap="#image-map" id="img_ID"class="map" style="width: 100%;">
+
+            <map name="image-map" id="map_ID">
+                <area target="new" id="3111" alt="Ahmadnagar" title="Ahmadnagar" href="" coords="379,268,384,248,391,248,394,240,396,232,398,223,407,220,415,211,421,204,422,197,416,196,410,192,415,185,418,177,422,166,434,168,437,175,444,166,446,173,450,179,453,174,459,179,465,180,474,186,475,194,481,199,491,214,485,226,486,243,490,264,490,270,477,266,473,270,471,278,462,278,455,279,447,271,438,273,434,277,430,271,424,257,420,265,416,271,413,262,410,255,405,257,392,263" shape="poly">
+            </map>
+        </div>
+
+
+        <div class="mr-5">
+            <div class="border border-dark1 ml-4 mt-5 rounded">
+                <h5>Today Total Scan Wardha Property</h5>
+                <ul class="list-group">
+                    <li class="list-group-item head-color">Today Scan House Count</li>
+                    <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.TotalHouseScan</li>
+                    <li class="list-group-item head-color">Today Scan Liquid Count</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i> @Model.TotalLiquidScan</li>
+                    <li class="list-group-item head-color">Today Scan Street Count</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalStreetScan</li>
+                    <li class="list-group-item head-color">Today Scan Dump Count</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i> @Model.TotalDumpScan</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+
+</html>
+<script>
+    window.onload = function () {
+        var ImageMap = function (map, img) {
+            var n,
+                areas = map.getElementsByTagName('area'),
+                len = areas.length,
+                coords = [],
+                previousWidth = 800;
+            for (n = 0; n < len; n++) {
+                coords[n] = areas[n].coords.split(',');
+            }
+            this.resize = function () {
+                var n, m, clen,
+                    x = img.offsetWidth / previousWidth;
+                for (n = 0; n < len; n++) {
+                    clen = coords[n].length;
+                    for (m = 0; m < clen; m++) {
+                        coords[n][m] *= x;
+                    }
+                    areas[n].coords = coords[n].join(',');
+                }
+                previousWidth = img.offsetWidth;
+                return true;
+            };
+            window.onresize = this.resize;
+        },
+            imageMap = new ImageMap(document.getElementById('map_ID'), document.getElementById('img_ID'));
+        imageMap.resize();
+        return;
+    }
+
+</script>

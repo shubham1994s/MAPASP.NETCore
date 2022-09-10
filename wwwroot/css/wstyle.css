@@ -1,0 +1,284 @@
+.container{
+	background:url(./GadchiroliMap/Gadchiroli-Map_Blank.png)!important;
+    /* background: url(./img/Backgounr.jpeg); */
+    height: 100vh!important;
+    background-repeat: no-repeat!important;
+    justify-content: center!important;
+    margin-left: 25%!important;
+    position: relative!important;
+    width: 50%!important;
+    background-size: cover !important;
+	}
+    /* body{background-image: url('./img/Top_image.png');} */
+    #si{    position: absolute;
+    /* top: 5%; */
+    bottom: 8%;
+    left: 39%;
+}
+
+.gname{
+	/* border: 10px solid #189cdf !important; */
+    padding: 2%;
+    font-size: 18px;
+	color:#189cdf !important;
+}
+.imgleft{
+	width:15%;
+	margin-left: 5%;
+}
+.imgright{
+	    width: 13%;
+    margin-left: 5%;
+    float: right;
+    margin-top: -5%;
+}
+.imgtop{
+	width: 10%;
+    margin-top: -2%;
+    margin-left: 85%;
+    margin-bottom: 5%;
+}
+.imgbottom{
+	width: 35%;
+    margin-left: 35%;
+}
+.gname h4{
+	text-align: center;
+    margin-top: -5%;
+    font-size: 25px;
+	margin-left: 5%;
+}
+.popupimg1{
+	width:60%;
+	margin-left:20%
+}
+.popupimg2{
+	width:60%;
+	margin-left:20%
+}
+.modal{
+	top:10%;
+}
+.modal-dialog{
+	max-width:100% !important;
+	margin-top:15% !important;
+	margin-left:0% !important;
+	margin-right:0% !important;
+}
+.modal-content{
+	background-color: #fff0 !important;
+	border: 0px solid rgba(0,0,0,.2)!important;
+}
+a span{color: #000;}
+#new1{position: absolute;
+    /* top: 5%; */
+    /* padding: 10px; */
+    bottom: 45%;
+    left: 50%;}
+    #new1:hover{
+        /* box-shadow: rgb(0 0 0 / 30%) 10px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
+        width:"125px"; height:"65px" */
+        /* box-shadow: 0px 0px 150px #000000; */
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.5);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.5);   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.5);
+    transition: all 200ms ease-in;
+    transform: scale(1.5);
+}
+
+#si:hover{
+        /* box-shadow: rgb(0 0 0 / 30%) 10px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
+        width:"125px"; height:"65px" */
+        /* box-shadow: 0px 0px 150px #000000; */
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.5);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.5);   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.5);
+    transition: all 200ms ease-in;
+    transform: scale(1.5);
+}
+
+#aheri{    position: absolute;
+    top: 70%;
+    left: 41%;
+}
+#aheri:hover{
+  
+z-index: 2;
+-webkit-transition: all 200ms ease-in;
+-webkit-transform: scale(1.5);
+-ms-transition: all 200ms ease-in;
+-ms-transform: scale(1.5);   
+-moz-transition: all 200ms ease-in;
+-moz-transform: scale(1.5);
+transition: all 200ms ease-in;
+transform: scale(1.5);
+}
+#Bhamragad{    position: absolute;
+   top: 62%;
+    left: 57%;
+}
+#Bhamragad:hover{
+  
+z-index: 2;
+-webkit-transition: all 200ms ease-in;
+-webkit-transform: scale(1.5);
+-ms-transition: all 200ms ease-in;
+-ms-transform: scale(1.5);   
+-moz-transition: all 200ms ease-in;
+-moz-transform: scale(1.5);
+transition: all 200ms ease-in;
+transform: scale(1.5);
+}
+#Mulchera{    position: absolute;
+    top: 54%;
+    left: 35%;
+    font-size: 12px;
+
+ }
+ #Mulchera:hover{
+   
+ z-index: 2;
+ -webkit-transition: all 200ms ease-in;
+ -webkit-transform: scale(1.5);
+ -ms-transition: all 200ms ease-in;
+ -ms-transform: scale(1.5);   
+ -moz-transition: all 200ms ease-in;
+ -moz-transform: scale(1.5);
+ transition: all 200ms ease-in;
+ transform: scale(1.5);
+ }
+ #Chamorshi{    position: absolute;
+    top: 46%;
+    left: 33%;
+    font-size: 14px;
+
+ }
+ #Chamorshi:hover{
+   
+ z-index: 2;
+ -webkit-transition: all 200ms ease-in;
+ -webkit-transform: scale(1.5);
+ -ms-transition: all 200ms ease-in;
+ -ms-transform: scale(1.5);   
+ -moz-transition: all 200ms ease-in;
+ -moz-transform: scale(1.5);
+ transition: all 200ms ease-in;
+ transform: scale(1.5);
+ }
+ #Gadhchiroli{    position: absolute;
+    top: 36%;
+    left: 39%;
+    font-size: 8px;
+    font-weight: 600;
+
+ }
+ #Gadhchiroli:hover{
+   
+ z-index: 2;
+ -webkit-transition: all 200ms ease-in;
+ -webkit-transform: scale(1.5);
+ -ms-transition: all 200ms ease-in;
+ -ms-transform: scale(1.5);   
+ -moz-transition: all 200ms ease-in;
+ -moz-transform: scale(1.5);
+ transition: all 200ms ease-in;
+ transform: scale(1.5);
+ }
+ #Dhanora{    position: absolute;
+    top: 30%;
+    left: 47%;
+    font-size: 12px;
+
+ }
+ #Dhanora:hover{
+   
+ z-index: 2;
+ -webkit-transition: all 200ms ease-in;
+ -webkit-transform: scale(1.5);
+ -ms-transition: all 200ms ease-in;
+ -ms-transform: scale(1.5);   
+ -moz-transition: all 200ms ease-in;
+ -moz-transform: scale(1.5);
+ transition: all 200ms ease-in;
+ transform: scale(1.5);
+ }
+ #Armori{    position: absolute;
+    top: 22%;
+    left: 40%;
+    font-size: 12px;
+
+ }
+ #Armori:hover{
+   
+ z-index: 2;
+ -webkit-transition: all 200ms ease-in;
+ -webkit-transform: scale(1.5);
+ -ms-transition: all 200ms ease-in;
+ -ms-transform: scale(1.5);   
+ -moz-transition: all 200ms ease-in;
+ -moz-transform: scale(1.5);
+ transition: all 200ms ease-in;
+ transform: scale(1.5);
+ }
+ #Kurkheda{    position: absolute;
+    top: 15%;
+    left: 45%;
+    font-size: 12px;
+
+ }
+ #Kurkheda:hover{
+   
+ z-index: 2;
+ -webkit-transition: all 200ms ease-in;
+ -webkit-transform: scale(1.5);
+ -ms-transition: all 200ms ease-in;
+ -ms-transform: scale(1.5);   
+ -moz-transition: all 200ms ease-in;
+ -moz-transform: scale(1.5);
+ transition: all 200ms ease-in;
+ transform: scale(1.5);
+ }
+ #Korchi{    position: absolute;
+    top: 8%;
+    left: 54%;
+    font-size: 12px;
+
+ }
+ #Korchi:hover{
+   
+ z-index: 2;
+ -webkit-transition: all 200ms ease-in;
+ -webkit-transform: scale(1.5);
+ -ms-transition: all 200ms ease-in;
+ -ms-transform: scale(1.5);   
+ -moz-transition: all 200ms ease-in;
+ -moz-transform: scale(1.5);
+ transition: all 200ms ease-in;
+ transform: scale(1.5);
+ }
+ #Desaiganj{    position: absolute;
+    top: 12%;
+    left: 37%;
+    font-size: 9px;
+    font-weight: 700;
+}
+ #Desaiganj:hover{
+   
+ z-index: 2;
+ -webkit-transition: all 200ms ease-in;
+ -webkit-transform: scale(1.5);
+ -ms-transition: all 200ms ease-in;
+ -ms-transform: scale(1.5);   
+ -moz-transition: all 200ms ease-in;
+ -moz-transform: scale(1.5);
+ transition: all 200ms ease-in;
+ transform: scale(1.5);
+ }
