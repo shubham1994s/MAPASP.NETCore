@@ -7192,19 +7192,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\SHUBHAM\\.nuget\\packages\\": {}
+    "C:\\Users\\ROHIT\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\LiveServer\\MAPNetCore\\MAPWEBAPP\\MAPWEBAPP.csproj",
+      "projectUniqueName": "D:\\Rohit\\MaharashtraMapProject\\MAPWEBAPP.csproj",
       "projectName": "MAPWEBAPP",
-      "projectPath": "D:\\LiveServer\\MAPNetCore\\MAPWEBAPP\\MAPWEBAPP.csproj",
-      "packagesPath": "C:\\Users\\SHUBHAM\\.nuget\\packages\\",
-      "outputPath": "D:\\LiveServer\\MAPNetCore\\MAPWEBAPP\\obj\\",
+      "projectPath": "D:\\Rohit\\MaharashtraMapProject\\MAPWEBAPP.csproj",
+      "packagesPath": "C:\\Users\\ROHIT\\.nuget\\packages\\",
+      "outputPath": "D:\\Rohit\\MaharashtraMapProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\SHUBHAM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ROHIT\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
