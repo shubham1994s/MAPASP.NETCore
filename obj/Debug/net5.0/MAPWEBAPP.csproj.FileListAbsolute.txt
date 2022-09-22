@@ -327,3 +327,4 @@ D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\MAPWEBAPP.dll
 D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\ref\MAPWEBAPP.dll
 D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\MAPWEBAPP.pdb
 D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\MAPWEBAPP.genruntimeconfig.cache
+D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\MAPWEBAPP.csproj.AssemblyReference.cache
