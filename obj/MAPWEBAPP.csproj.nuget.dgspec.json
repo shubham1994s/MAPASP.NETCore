@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\LiveServer\\MAPNetCore\\MAPWEBAPP\\MAPWEBAPP.csproj": {}
+    "D:\\LiveServer\\MaharashtraMapProject\\MAPWEBAPP\\MAPWEBAPP.csproj": {}
   },
   "projects": {
-    "D:\\LiveServer\\MAPNetCore\\MAPWEBAPP\\MAPWEBAPP.csproj": {
+    "D:\\LiveServer\\MaharashtraMapProject\\MAPWEBAPP\\MAPWEBAPP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\LiveServer\\MAPNetCore\\MAPWEBAPP\\MAPWEBAPP.csproj",
+        "projectUniqueName": "D:\\LiveServer\\MaharashtraMapProject\\MAPWEBAPP\\MAPWEBAPP.csproj",
         "projectName": "MAPWEBAPP",
-        "projectPath": "D:\\LiveServer\\MAPNetCore\\MAPWEBAPP\\MAPWEBAPP.csproj",
+        "projectPath": "D:\\LiveServer\\MaharashtraMapProject\\MAPWEBAPP\\MAPWEBAPP.csproj",
         "packagesPath": "C:\\Users\\SHUBHAM\\.nuget\\packages\\",
-        "outputPath": "D:\\LiveServer\\MAPNetCore\\MAPWEBAPP\\obj\\",
+        "outputPath": "D:\\LiveServer\\MaharashtraMapProject\\MAPWEBAPP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\SHUBHAM\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -83,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.411\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.412\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Zc1hMDHcBC07PxW6gma7OplBsAILk9RQeF7zTkqjJ6jCIASbqnSELfjIsqyrWdyERD5a6bl6bjAVLrGg9UfBVQ==",
+  "dgSpecHash": "1xIuxfP7ufXdQk01jhud7d0U7qRHlKXDDnZvVoc274tPi6tzZd+mV53lTSt3gZ2hetJlMuPFhMEh6vMSmlng3g==",
   "success": true,
-  "projectFilePath": "D:\\LiveServer\\MAPNetCore\\MAPWEBAPP\\MAPWEBAPP.csproj",
+  "projectFilePath": "D:\\LiveServer\\MaharashtraMapProject\\MAPWEBAPP\\MAPWEBAPP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SHUBHAM\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\SHUBHAM\\.nuget\\packages\\jquery\\1.9.0\\jquery.1.9.0.nupkg.sha512",
