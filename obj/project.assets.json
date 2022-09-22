@@ -7192,19 +7192,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\COMP-21\\.nuget\\packages\\": {}
+    "C:\\Users\\SHUBHAM\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Umesh Work\\MaharashtraMapProject\\MaharashtraMapProject\\MAPWEBAPP\\MAPWEBAPP.csproj",
+      "projectUniqueName": "D:\\LiveServer\\MaharashtraMapProject\\MAPWEBAPP\\MAPWEBAPP.csproj",
       "projectName": "MAPWEBAPP",
-      "projectPath": "D:\\Umesh Work\\MaharashtraMapProject\\MaharashtraMapProject\\MAPWEBAPP\\MAPWEBAPP.csproj",
-      "packagesPath": "C:\\Users\\COMP-21\\.nuget\\packages\\",
-      "outputPath": "D:\\Umesh Work\\MaharashtraMapProject\\MaharashtraMapProject\\MAPWEBAPP\\obj\\",
+      "projectPath": "D:\\LiveServer\\MaharashtraMapProject\\MAPWEBAPP\\MAPWEBAPP.csproj",
+      "packagesPath": "C:\\Users\\SHUBHAM\\.nuget\\packages\\",
+      "outputPath": "D:\\LiveServer\\MaharashtraMapProject\\MAPWEBAPP\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\COMP-21\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\SHUBHAM\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7273,7 +7273,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.412\\RuntimeIdentifierGraph.json"
       }
     }
   }
