@@ -167,6 +167,21 @@
             color: #333333;
             margin-top: -3%;
         }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            font-size:13px;
+            padding:2px;
+            text-align:center;
+            font-weight:600;
+        }
+        tr:nth-child(even) {
+            background: #94c7dfab
+        }
+
+        tr:nth-child(odd) {
+            background: #FFF
+        }
     </style>
 </head>
 
@@ -219,23 +234,176 @@
         </div>
 
 
-        @*<div class="mr-5">
-            <div class="border border-dark1 ml-4 mt-5 rounded">
-                <h5>Today Total Scan Maharashtra Property</h5>
-                <ul class="list-group">
-                    <li class="list-group-item head-color">Today Scan House Count</li>
-                    <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.TotalHouseScan</li>
-                    <li class="list-group-item head-color">Today Scan Liquid Count</li>
-                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i> @Model.TotalLiquidScan</li>
-                    <li class="list-group-item head-color">Today Scan Street Count</li>
-                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalStreetScan</li>
-                    <li class="list-group-item head-color">Today Scan Dump Count</li>
-                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i> @Model.TotalDumpScan</li>
-                </ul>
+        <div class="mt-3 mr-3">
+            <table style="width:100%">
+                <tr>
+                    <th>Ulb Name</th>
+                    <th>Ulb Name</th>
+                    <th>Ulb Name</th>
+
+                </tr>
+                <tr>
+
+                    <td>Aarmori Nagar Parishad</td>
+                    <td>Etapalli Nagar Panchayat</td>
+                    <td>Mul Nagar Parishad</td>
+
+                </tr>
+                <tr>
+                    <td>Aheri Nagar Panchayat</td>
+                    <td>Gadchiroli Nagar Parishad</td>
+                    <td>Mulchera Nagar Panchayat</td>
+
+                </tr>
+                <tr>
+                    <td>Akluj Nagar Parishad</td>
+                    <td>Goregaon Nagar Panchayat</td>
+                    <td>
+                        Murbad Nagar Panchayat
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Akot Nagar Parishad</td>
+                    <td>Hinganghat Nagar Parishad</td>
+                    <td>
+
+                        Nagbhid Nagar Parishad
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Alandi Nagar Parishad</td>
+                    <td>Hingna Nagar Panchayat</td>
+                    <td>Nagpur Mahanagar Palika</td>
+
+                </tr>
+                <tr>
+                    <td>Amgaon Nagar Parishad</td>
+                    <td>Indapur Nagar Parishad</td>
+                    <td>Narkhed Nagar Parishad</td>
+
+                </tr>
+                <tr>
+                    <td>Arjuni Nagar Panchayat</td>
+                    <td>Jath Nagar Parishad</td>
+                    <td>Palghar Nagar Parishad</td>
+
+                </tr>
+                <tr>
+                    <td>Arvi Nagar Parishad</td>
+                    <td>
+                        Jintur Nagar Parishad
+                    </td>
+                    <td>
+                        Parseoni Nagar Panchayat
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Ashti Nagar Panchayat</td>
+                    <td>Kalmeshwar-Brahmani Nagar Parishad</td>
+                    <td>
+                        Pulgaon Nagar Parishad
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Ballarpur Nagar Parishad</td>
+                    <td>
+                        Khamgaon Nagar Parishad
+                    </td>
+                    <td>
+                        Rahimatpur Nagar Parishad
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Bhamragad Nagar Panchayat</td>
+                    <td> Khapa Nagar Parishad</td>
+                    <td>Salekasa Nagar Panchayat</td>
+
+                </tr>
+                <tr>
+                    <td>Bhisi Nagar Panchayat</td>
+                    <td>
+                        Korchi Nagar Panchayat
+                    </td>
+                    <td>Saoli Nagar Panchayat</td>
+
+                </tr>
+                <tr>
+                    <td>Chamorshi Nagar Panchayat</td>
+                    <td>
+                        Kuhi Nagar Panchayat
+                    </td>
+                    <td>
+                        Shrirampur Nagar Parishad
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Chandur Railway Nagar Parishad</td>
+                    <td>Kurkheda Nagar Panchayat</td>
+                    <td> Sindi Railway Nagar Parishad</td>
+
+                </tr>
+                <tr>
+                    <td>Chandwad Nagar Parishad</td>
+                    <td>Mahadula Nagar Panchayat</td>
+                    <td>
+                        Sironcha Nagar Panchayat
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Chimur Nagar Parishad</td>
+                    <td>Mangalwedha Nagar Parishad</td>
+                    <td>Tirora Nagar Parishad</td>
+
+                </tr>
+                <tr>
+                    <td>Dahanu Nagar Parishad</td>
+                    <td>Manwat Nagar Parishad</td>
+                    <td>Wanadongri Nagar Parishad</td>
+
+                </tr>
+                <tr>
+                    <td>Daund Nagar Parishad</td>
+                    <td>Mohadi Nagar Panchayat </td>
+                    <td>Wardha Nagar Parishad</td>
+
+                </tr>
+                <tr>
+                    <td>Desaiganj Nagar Parishad</td>
+                    <td>Mohpa Nagar Parishad</td>
+                    <td></td>
+
+                </tr>
+                <tr>
+                    <td> Dhanora Nagar Panchayat</td>
+                    <td>
+                        Mouda Nagar Panchayat
+                    </td>
+                    @*<td>50)</td>*@
+
+                </tr>
+                @*<tr>
+        <td>Etapalli Nagar Panchayat</td>
+        <td>Murbad Nagar Panchayat</td>*@
+                @*<td>51)</td>*@
+
+                <!--</tr>
+    <tr>
+        <td>Gadchiroli Nagar Parishad</td>
+        <td>Nagbhid Nagar Parishad</td>-->
+                @*<td>52)</td>*@
+
+                <!--</tr>-->
 
 
-            </div>
-        </div>*@
+            </table>
+        </div>
     </div>
 
 </body>
