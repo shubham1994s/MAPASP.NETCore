@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>D:\LiveServer\Publish\MAPWEBAPP</_PublishTargetUrl>
-    <History>True|2022-05-24T22:16:45.1901935Z;True|2022-05-24T15:05:35.3445934-07:00;True|2022-05-24T15:04:32.6892517-07:00;True|2022-05-24T14:50:11.5671576-07:00;True|2022-05-17T15:00:05.5628029-07:00;True|2022-05-17T14:59:15.3127181-07:00;True|2022-05-16T14:43:09.9828317-07:00;</History>
+    <History>True|2022-09-28T00:43:10.8527451Z;True|2022-05-24T15:16:45.1901935-07:00;True|2022-05-24T15:05:35.3445934-07:00;True|2022-05-24T15:04:32.6892517-07:00;True|2022-05-24T14:50:11.5671576-07:00;True|2022-05-17T15:00:05.5628029-07:00;True|2022-05-17T14:59:15.3127181-07:00;True|2022-05-16T14:43:09.9828317-07:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="Views/Home/Index.cshtml">

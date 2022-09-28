@@ -22,67 +22,67 @@
           rel="stylesheet">
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <link href="~/css/tooltip.css" rel="stylesheet" />
-    <script type="text/javascript">
+    @*<script type="text/javascript">
 
-      $(document).ready(function () {
-            //   $('#DataTable').DataTable();
-            // debugger;
-            //var previousText = null;
-            //var set_data = '';
-            //$('[data-toggle="popover"]').popover({
-            //    title: setData,
-            //    html: true,
-            //    container: 'body',
+         $(document).ready(function () {
+                //   $('#DataTable').DataTable();
+                // debugger;
+                //var previousText = null;
+                //var set_data = '';
+                //$('[data-toggle="popover"]').popover({
+                //    title: setData,
+                //    html: true,
+                //    container: 'body',
 
-            //});
-            //function setData(id) {
-            //    // debugger;
-            //    var element = $(this);
-            //    var id = element.attr("id");
-            //    var currentText = element.attr("id");
-            //    if (previousText != currentText) {
-            //        $.ajax({
-            //            url: "/MAP/Loaddata?DistrictId=" + id,
-            //            method: "post",
-            //            dataType: 'json',
-            //            async: false,
-            //            data: { id: id },
-            //            success: function (data) {
-            //                //  debugger;
-            //                set_data = data;
+                //});
+                //function setData(id) {
+                //    // debugger;
+                //    var element = $(this);
+                //    var id = element.attr("id");
+                //    var currentText = element.attr("id");
+                //    if (previousText != currentText) {
+                //        $.ajax({
+                //            url: "/MAP/Loaddata?DistrictId=" + id,
+                //            method: "post",
+                //            dataType: 'json',
+                //            async: false,
+                //            data: { id: id },
+                //            success: function (data) {
+                //                //  debugger;
+                //                set_data = data;
 
-            //            }
-            //        });
+                //            }
+                //        });
 
-            //    }
-            //    previousText = currentText;
-            //    return set_data;
+                //    }
+                //    previousText = currentText;
+                //    return set_data;
 
-            //}
-            debugger;
-          var lstMapDetails = @Html.Raw(Json.Serialize(@Model.ListMapDetails));
-          console.log(lstMapDetails)
-        for (i = 0; i < lstMapDetails.length; i++) {
-            //if ($("area[id=" + lstMapDetails[i]['ulbId'] + "]").length)
-            //{
-                $("area[id=" + lstMapDetails[i]['ulbId'] + "]").tooltip({
-                    show: false,
-                    track: true,
-
-
-                    content: "<strong> District Name : " + lstMapDetails[i]['ulbName'] + "</strong><br><strong>Total House Count : " + lstMapDetails[i]['totalHouse'] + "</strong><br><strong>Today House Scanned : " + lstMapDetails[i]['totalHouseScan'] + "</strong>"});
-
-         /*   }*/
-
-        }
+                //}
+                debugger;
+              var lstMapDetails = @Html.Raw(Json.Serialize(@Model.ListMapDetails));
+              console.log(lstMapDetails)
+            for (i = 0; i < lstMapDetails.length; i++) {
+                //if ($("area[id=" + lstMapDetails[i]['ulbId'] + "]").length)
+                //{
+                    $("area[id=" + lstMapDetails[i]['ulbId'] + "]").tooltip({
+                        show: false,
+                        track: true,
 
 
-        }
-        );
+                        content: "<strong> District Name : " + lstMapDetails[i]['ulbName'] + "</strong><br><strong>Total House Count : " + lstMapDetails[i]['totalHouse'] + "</strong><br><strong>Today House Scanned : " + lstMapDetails[i]['totalHouseScan'] + "</strong><br><strong> Total Liquid Count : " + lstMapDetails[i]['totalLiquid'] + " </strong><br><strong> Total Liquid Scan Count : " + lstMapDetails[i]['totalLiquidScan'] + "</strong><br><strong> Total Street Count : " + lstMapDetails[i]['totalStreet'] + "</strong><br><strong> Total Street Scan Count : " + lstMapDetails[i]['totalStreetScan'] + "</strong><br><strong>Total Dump Count : " + lstMapDetails[i]['totalDump'] + "</strong><br><strong> Total Dump Scan Count : " + lstMapDetails[i]['totalDumpScan'] + "</strong> " });
+
+             /*   }*/
+
+            }
+
+
+            }
+            );
 
 
 
-    </script>
+        </script>*@
 
     <script>
         $(function () {
@@ -167,15 +167,74 @@
             color: #333333;
             margin-top: -3%;
         }
+
+        table, th, td {
+            border: 1px solid #aba1a1;
+         border-collapse: collapse;
+         /*   border-radius:20px;*/
+            font-size: 12px;
+            padding: 2px;
+            text-align: inherit;
+            font-weight: 600;
+            padding-left: 15px;
+            line-height:20px
+        }
+
+        tr:nth-child(even) {
+            /* background: #94c7dfab*/
+           /* background: #dc3545a6*/
+           background:#fff
+        }
+
+        tr:nth-child(odd) {
+            /* background: #FFF*/
+            /*background: #e7a6a6f2*/
+            background:#fff;
+        }
+
+        #head {
+            /* background: #3db5f1;*/
+            background: #dc3545;
+            color: #fff;
+        }
+
+        /*td:hover {*/
+            /*background: #48bbf5;*/
+            /*background: #e94747
+        }*/
+
+        td a {
+            color: #000
+        }
+
+            td a:hover {
+                color: #000
+            }
+
+        .bg-1 {
+            background: url(/Images/BG1.png);
+            /* height: 323px; */
+            background-position: bottom;
+            background-size: cover;
+            /* background-repeat: round;*/
+        }
+        #sec td,th{line-height:10px !important}
     </style>
 </head>
 
 <body>
 
+<header>
+    <div class="d-flex justify-content-between py-2 bg-1" style="padding-left:5%;padding-right:5%">
+        <img src="/Images/Final Azadi Ka Amrit Mahotsav_Logo.png" style="height:55px;" />
+        <img src="/Images/linkImages/EK-Kdam-Logo.png" style="height:55px;"/>
+        <img src="/Images/linkImages/EK-Kdam-Logo.png"style="height:55px;" />
+    </div>
+</header>
     <div class="d-flex">
         <!-- Count List -->
 
-        <div class="mr-5">
+        @*<div class="mr-5">
             <div class="border border-dark1 ml-4 mt-5 rounded">
                 <h5>Total Maharashtra Property</h5>
 
@@ -191,7 +250,7 @@
                 </ul>
 
             </div>
-        </div>
+        </div>*@
         <!-- ImageMap Start -->
         <div class="border border-dark rounded">
             <h4 class="text-center mx-0 bg-danger text-white"> Map of Maharashtra</h4>
@@ -212,29 +271,235 @@
                 <area target="new" id="2013" alt="Chandrapur" title="Chandrapur" href="/Map/Chandrapur?DistrictId=2013" coords="618,190,626,194,632,202,639,209,643,217,647,222,642,226,633,228,622,237,629,241,629,248,636,249,647,255,652,246,661,247,672,250,679,250,688,248,696,245,710,251,710,242,711,233,707,223,714,217,716,210,708,204,713,195,712,187,712,180,714,172,710,165,711,155,706,149,700,146,692,151,685,147,677,147,672,153,666,149,663,156,656,158,652,163,649,169,642,170,635,169,629,173,624,174,618,181" shape="poly">
                 <area target="new" id="2024" alt="Nashik" title="Nashik" href="/Map/Nashik?DistrictId=2024" coords="135,202,147,194,155,192,156,184,153,175,159,167,161,159,157,152,166,153,173,160,181,161,189,159,190,151,199,147,200,141,210,138,222,139,235,139,243,144,252,143,260,148,263,154,274,158,271,167,275,178,277,190,268,194,266,203,262,216,261,223,257,228,254,223,255,213,246,212,235,211,224,210,225,218,231,222,228,227,221,228,215,232,212,239,205,238,194,235,192,228,184,232,183,240,166,247,156,235,157,229,151,227,150,220,152,211,142,205" shape="poly">
                 <area target="new" id="2021" alt="Ahmadnagar" title="Ahmadnagar" href="/Map/Ahmadnagar?DistrictId=2021" coords="167,248,175,243,183,242,183,234,192,231,193,237,200,238,208,243,213,234,221,231,229,229,232,224,225,219,222,211,232,213,241,213,250,213,257,214,254,223,259,229,267,233,269,240,276,242,285,241,294,245,302,248,311,251,320,256,325,263,332,266,329,271,324,278,324,285,311,289,305,291,311,298,294,291,295,285,287,288,280,289,284,298,274,299,277,307,284,314,292,319,299,325,303,319,309,318,318,316,321,311,327,320,336,321,333,327,328,332,324,337,318,336,312,340,305,337,302,342,297,338,295,346,289,349,273,357,270,351,264,349,263,342,256,348,250,342,247,330,238,329,242,324,222,305,216,295,216,288,222,282,217,279,211,279,203,275,199,266,192,267,181,263,177,258,173,252" shape="poly">
-                <area target="new" id="2022" alt="Satara" title="Satara" href="" coords="222,437,224,444,222,454,217,460,208,461,201,464,193,459,185,451,177,450,172,457,170,444,169,436,174,427,172,419,169,409,160,406,162,396,162,387,168,379,177,377,186,379,189,370,195,368,204,370,213,373,224,376,237,379,245,380,251,379,260,381,250,390,253,397,260,402,267,407,275,411,276,418,275,424,272,430,260,428,259,435,247,437,240,438,232,439" shape="poly">
-                <area target="new" id="2023" alt="Sangli" title="Sangli" href="" coords="169,455,174,446,183,452,194,457,205,460,213,460,222,447,222,438,229,437,241,438,253,436,267,430,276,423,281,428,289,432,285,439,283,445,278,450,276,458,282,461,288,453,297,452,304,451,308,457,315,457,323,454,335,450,343,457,340,463,344,472,341,477,332,478,322,475,315,478,309,480,307,485,297,482,286,477,278,480,275,488,270,495,262,495,253,492,242,484,233,483,219,477,210,477,201,475,192,466,184,458,176,458" shape="poly">
+                <area target="new" id="2022" alt="Satara" title="Satara" href="/Map/Satara?DistrictId=2022" coords="222,437,224,444,222,454,217,460,208,461,201,464,193,459,185,451,177,450,172,457,170,444,169,436,174,427,172,419,169,409,160,406,162,396,162,387,168,379,177,377,186,379,189,370,195,368,204,370,213,373,224,376,237,379,245,380,251,379,260,381,250,390,253,397,260,402,267,407,275,411,276,418,275,424,272,430,260,428,259,435,247,437,240,438,232,439" shape="poly">
+                <area target="new" id="2023" alt="Sangli" title="Sangli" href="/Map/Sangli?DistrictId=2023" coords="169,455,174,446,183,452,194,457,205,460,213,460,222,447,222,438,229,437,241,438,253,436,267,430,276,423,281,428,289,432,285,439,283,445,278,450,276,458,282,461,288,453,297,452,304,451,308,457,315,457,323,454,335,450,343,457,340,463,344,472,341,477,332,478,322,475,315,478,309,480,307,485,297,482,286,477,278,480,275,488,270,495,262,495,253,492,242,484,233,483,219,477,210,477,201,475,192,466,184,458,176,458" shape="poly">
             </map>
 
         </div>
 
 
-        <div class="mr-5">
-            <div class="border border-dark1 ml-4 mt-5 rounded">
-                <h5>Today Total Scan Maharashtra Property</h5>
-                <ul class="list-group">
-                    <li class="list-group-item head-color">Today Scan House Count</li>
-                    <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.TotalHouseScan</li>
-                    <li class="list-group-item head-color">Today Scan Liquid Count</li>
-                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i> @Model.TotalLiquidScan</li>
-                    <li class="list-group-item head-color">Today Scan Street Count</li>
-                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalStreetScan</li>
-                    <li class="list-group-item head-color">Today Scan Dump Count</li>
-                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i> @Model.TotalDumpScan</li>
-                </ul>
+        <div class="d-flex ml-2 justify-content-between">
+            <table style="width:100%">
+                <tr id="head">
+                    <th class="py-1">Complete ULB</th>
+
+                    <th class="py-1">Current ULB</th>
+
+                </tr>
+                <tr>
+
+                    <td><a href="https://ictsbm.com/?returnUrl=Aarmoriwaste@ulb.com&Type=W">Aarmori Nagar Parishad</a></td>
+                    <td><a href="https://ictsbm.com/?returnUrl=Kurkhedawaste@ulb.com&Type=W">Kurkheda Nagar Panchayat</a></td>
+                   
+                </tr>
+                <tr>
+                    <td><a href="https://ictsbm.com/?returnUrl=aheriwaste@ulb.com&Type=W">Aheri Nagar Panchayat</a></td>
+                    <td><a href="https://ictsbm.com/?returnUrl=Mahaulawaste@ulb.com&Type=W">Mahadula Nagar Panchayat</a></td>
+                    
+                </tr>
+                <tr>
+                    <td><a href="https://ictsbm.com/?returnUrl=Aklujwaste@ulb.com&Type=W">Akluj Nagar Parishad</a></td>
+                    <td><a href="https://ictsbm.com/?returnUrl=Mangalwedhawaste@ulb.com&Type=W">Mangalwedha Nagar Parishad</a></td>
+                    
+
+                </tr>
+                <tr>
+                    <td><a href="https://ictsbm.com/?returnUrl=Amgaonwaste@ulb.com&Type=W">Amgaon Nagar Parishad</a></td>
+                    <td><a href="https://ictsbm.com/?returnUrl=Manwatwaste@ulb.com&Type=W">Manwat Nagar Parishad</a></td>
+                    
+                </tr>
+                <tr>
+                    <td><a href="https://ictsbm.com/?returnUrl=Arviwaste@ulb.com&Type=W">Arvi Nagar Parishad</a></td>
+                    <td><a href="https://ictsbm.com/?returnUrl=Mohadiwaste@ulb.com&Type=W">Mohadi Nagar Panchayat</a></td>
+                   
+                </tr>
+                <tr>
+                    <td><a href="https://ictsbm.com/?returnUrl=Bhamragadwaste@ulb.com&Type=W">Bhamragad Nagar Panchayat</a></td>
+                    <td><a href="https://ictsbm.com/?returnUrl=Moudawaste@ulb.com&Type=W">  Mouda Nagar Panchayat</a></td>
+                   
+                </tr>
+                <tr>
+                    <td><a href="https://ictsbm.com/?returnUrl=Chamorshiwaste@ulb.com&Type=W">Chamorshi Nagar Panchayat</a></td>
+                    <td><a href="https://ictsbm.com/?returnUrl=Mulcherawaste@ulb.com&Type=W">Mulchera Nagar Panchayat</a></td>
+                   
+                </tr>
+                <tr>
+                    <td><a href="https://ictsbm.com/?returnUrl=Chandurrailwaywaste@ulb.com&Type=W">Chandur Railway Nagar Parishad</a></td>
+                    <td>
+                        <a href="https://ictsbm.com/?returnUrl=Palgharwaste@ulb.com&Type=W">Palghar Nagar Parishad</a>
+                    </td>
+                   
+
+                </tr>
+                <tr>
+                    <td><a href="https://ictsbm.com/?returnUrl=dahanuwaste@ulb.com&Type=W">Dahanu Nagar Parishad</a></td>
+                    <td><a href="https://ictsbm.com/?returnUrl=Pulgaonwaste@ulb.com&Type=W">Pulgaon Nagar Parishad</a></td>
+                    
+
+                </tr>
+                <tr>
+                    <td><a href="https://ictsbm.com/?returnUrl=desaiganjwaste@ulb.com&Type=W">Desaiganj Nagar Parishad</a></td>
+                    <td>
+                        <a href="https://ictsbm.com/?returnUrl=rahimatpurwaste@ulb.com&Type=W"> Rahimatpur Nagar Parishad</a>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td><a href="https://ictsbm.com/?returnUrl=Dhanorawaste@ulb.com&Type=W"> Dhanora Nagar Panchayat</a></td>
+                    <td><a href="https://ictsbm.com/?returnUrl=Sindiwaste@ulb.com&Type=W">Sindi Railway Nagar Parishad </a></td>
+                  
+                </tr>
+                <tr>
+                    <td><a href="https://ictsbm.com/?returnUrl=Etapalliwaste@ulb.com&Type=W">Etapalli Nagar Panchayat</a></td>
+                    <td>
+                        <a href="https://ictsbm.com/?returnUrl=Sironchawaste@ulb.com&Type=W"> Sironcha Nagar Panchayat</a>
+                    </td>
+                   
+                </tr>
+                <tr>
+                    <td><a href="https://ictsbm.com/?returnUrl=Gadhchiroliwaste@ulb.com&Type=W">Gadchiroli Nagar Parishad</a></td>
+                    <td>
+                        <a href="https://ictsbm.com/?returnUrl=Wardhawaste@ulb.com&Type=W">Wardha Nagar Parishad</a>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td><a href="https://ictsbm.com/?returnUrl=Goregaonwaste@ulb.com&Type=W">Goregaon Nagar Panchayat</a></td>
+                    <td></td>
+                   
+                </tr>
+                <tr>
+                    <td><a href="https://ictsbm.com/?returnUrl=Hinganghatwaste@ulb.com&Type=W">Hinganghat Nagar Parishad</a></td>
+                    <td></td>
+                   
+                </tr>
+                <tr>
+                    <td><a href="https://ictsbm.com/?returnUrl=Hingnawaste@ulb.com&Type=W">Hingna Nagar Panchayat</a></td>
+                    <td></td>
+                   
+
+                </tr>
+                <tr>
+                    <td><a href="https://ictsbm.com/?returnUrl=Jinturwaste@ulb.com&Type=W">  Jintur Nagar Parishad</a></td>
+                    <td></td>
+                   
+
+                </tr>
+                <tr>
+                    <td><a href="https://ictsbm.com/?returnUrl=kalmeshwarbrahmaniwaste@ulb.com&Type=W">Kalmeshwar-Brahmani Nagar Parishad</a></td>
+                    <td> </td>
+                  
+
+                </tr>
+                <tr>
+                    <td><a href="https://ictsbm.com/?returnUrl=Khapawaste@ulb.com&Type=W">Khapa Nagar Parishad</a></td>
+                    <td></td>
+                    
+
+                </tr>
+                <tr>
+                    <td><a href="https://ictsbm.com/?returnUrl=Korchiwaste@ulb.com&Type=W"> Korchi Nagar Panchayat</a></td>
+                    <td>
+                    </td>
+                   
+
+                </tr>
+               
 
 
-            </div>
+            </table>
+            <table style="width:50%; margin-left:2%">
+                <tr id="head" class="sec">
+                  
+
+                    <th class="py-1" style="border-top-left-radius:5px">Current ULB</th>
+
+                </tr>
+                <tr class="sec">
+
+                    <td><a href="https://ictsbm.com/?returnUrl=Arjuniwaste@ulb.com&Type=W">Arjuni Nagar Panchayat</a></td>
+
+                </tr>
+                <tr class="sec">
+                    <td><a href="https://ictsbm.com/?returnUrl=Ashtiwaste@ulb.com&Type=W">Ashti Nagar Panchayat</a></td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://ictsbm.com/?returnUrl=Ballarpurwaste@ulb.com&Type=W">Ballarpur Nagar Parishad</a>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+
+                        <a href="https://ictsbm.com/?returnUrl=Daundwaste@ulb.com&Type=W">Daund Nagar Parishad</a>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td><a href="https://ictsbm.com/?returnUrl=Indapurwaste@ulb.com&Type=W">Indapur Nagar Parishad</a></td>
+
+                </tr>
+                <tr>
+                     <td><a href="https://ictsbm.com/?returnUrl=Jathwaste@ulb.com&Type=W">Jath Nagar Parishad</a></td>
+
+                </tr>
+                <tr>
+                    <td><a href="https://ictsbm.com/?returnUrl=Murbadwaste@ulb.com&Type=W">Murbad Nagar Panchayat</a></td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://ictsbm.com/?returnUrl=Nagpurwaste@ulb.com&Type=W">  Nagpur Mahanagar Palika</a>
+                    </td>
+
+                </tr>
+                <tr>
+                     <td>
+                        <a href="https://ictsbm.com/?returnUrl=Saoliwaste@ulb.com&Type=W">    Saoli Nagar Panchayat</a>
+                    </td>
+
+                </tr>
+                <tr>
+                      <td>
+                        <a href="https://ictsbm.com/?returnUrl=shrirampurwaste@ulb.com&Type=W"> Shrirampur Nagar Parishad</a>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td><a href="https://ictsbm.com/?returnUrl=Thanewaste@ulb.com&Type=W">Thane Mahanagar Palika</a></td>
+
+                </tr>
+                <tr>
+                   
+                    <td><a href="https://ictsbm.com/?returnUrl=Mulwaste@ulb.com&Type=W"> Mul Nagar Parishad</a></td>
+
+                </tr>
+                <tr>
+                  
+                    <td>
+                        <a href="https://ictsbm.com/?returnUrl=Salekasawaste@ulb.com&Type=W"> Salekasa Nagar Panchayat</a>
+                    </td>
+
+                </tr>
+                <tr>
+                   
+                    <td><a href="https://ictsbm.com/?returnUrl=Chandwadwaste@ulb.com&Type=W">Chandwad Nagar Parishad</a></td>
+
+                </tr>
+                <tr>
+                 
+                    <td>
+                        <a href="https://ictsbm.com/?returnUrl=Tirorawaste@ulb.com&Type=W"> Tirora Nagar Parishad</a>
+                    </td>
+
+                </tr>
+               
+             
+
+
+            </table>
         </div>
     </div>
 
