@@ -94,33 +94,50 @@
         .popover-header {
             font-size: 75%;
         }
+
+        .bg-1 {
+            background: url(/Images/BG1.png);
+            /* height: 323px; */
+            background-position: bottom;
+            background-size: cover;
+            /* background-repeat: round;*/
+        }
+        /*  .sec td{line-height:8px !important}*/
     </style>
 </head>
 
 <body>
+
+    <header>
+        <div class="d-flex justify-content-between py-2 bg-1" style="padding-left:5%;padding-right:5%">
+            <img src="/Images/Final Azadi Ka Amrit Mahotsav_Logo.png" style="height:55px;" />
+            <img src="/Images/Embelem.png" style="height:55px;" />
+            <img src="/Images/linkImages/EK-Kdam-Logo.png" style="height:55px;" />
+        </div>
+    </header>
     <div class="d-flex">
         <!-- Count List -->
-        <div class="mr-5">
-            <div class="border border-dark1 ml-4 mt-5 rounded">
-                <h5>Total Bhandara Property</h5>
+        @*<div class="mr-5">
+                <div class="border border-dark1 ml-4 mt-5 rounded">
+                    <h5>Total Bhandara Property</h5>
 
-                <ul class="list-group">
-                    <li class="list-group-item head-color">Total House Count Count</li>
-                    <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.TotalHouse</li>
-                    <li class="list-group-item head-color">Total Liquid Count</li>
-                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalLiquid</li>
-                    <li class="list-group-item head-color">Total Street Count</li>
-                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalStreet</li>
-                    <li class="list-group-item head-color">Total Dump Count</li>
-                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalDump</li>
-                </ul>
+                    <ul class="list-group">
+                        <li class="list-group-item head-color">Total House Count Count</li>
+                        <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.TotalHouse</li>
+                        <li class="list-group-item head-color">Total Liquid Count</li>
+                        <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalLiquid</li>
+                        <li class="list-group-item head-color">Total Street Count</li>
+                        <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalStreet</li>
+                        <li class="list-group-item head-color">Total Dump Count</li>
+                        <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalDump</li>
+                    </ul>
 
-            </div>
-        </div>
+                </div>
+            </div>*@
         <!-- ImageMap Start -->
         <div class="border border-dark rounded">
             <h4 class="text-center mx-0 bg-danger text-white mb-0"> Map of Bhandara</h4>
-            <img src="/Images/GadchiroliMap/Bhandara-tehsil-map.jpg" usemap="#image-map" class="map"id="img_ID" style="width: 100%;">
+            <img src="/Images/GadchiroliMap/Bhandara-tehsil-map.jpg" usemap="#image-map" class="map" id="img_ID" style="width: 100%;">
 
             <map name="image-map" id="map_ID">
 
@@ -129,23 +146,23 @@
         </div>
 
 
-        <div class="mr-5">
-            <div class="border border-dark1 ml-4 mt-5 rounded">
-                <h5>Today Total Scan Bhandara Property</h5>
-                <ul class="list-group">
-                    <li class="list-group-item head-color">Today Scan House Count</li>
-                    <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.TotalHouseScan</li>
-                    <li class="list-group-item head-color">Today Scan Liquid Count</li>
-                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i> @Model.TotalLiquidScan</li>
-                    <li class="list-group-item head-color">Today Scan Street Count</li>
-                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalStreetScan</li>
-                    <li class="list-group-item head-color">Today Scan Dump Count</li>
-                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i> @Model.TotalDumpScan</li>
-                </ul>
+        @*<div class="mr-5">
+                <div class="border border-dark1 ml-4 mt-5 rounded">
+                    <h5>Today Total Scan Bhandara Property</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item head-color">Today Scan House Count</li>
+                        <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.TotalHouseScan</li>
+                        <li class="list-group-item head-color">Today Scan Liquid Count</li>
+                        <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i> @Model.TotalLiquidScan</li>
+                        <li class="list-group-item head-color">Today Scan Street Count</li>
+                        <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalStreetScan</li>
+                        <li class="list-group-item head-color">Today Scan Dump Count</li>
+                        <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i> @Model.TotalDumpScan</li>
+                    </ul>
 
 
-            </div>
-        </div>
+                </div>
+            </div>*@
     </div>
 
 
