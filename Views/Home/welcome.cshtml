@@ -1,33 +1,113 @@
-﻿<!DOCTYPE html>
+﻿
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
 <html>
-<style>
-    .modal {
-        display: block !important
-    }
-</style>
+
 <head>
-    <title>Gadchiroli Tahsil</title>
+    <title>Maharashtra Map</title>
     <link href="~/css/wstyle.css" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" media="screen" href="~/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .modal {
+            display: block !important
+        }
+
+        #ribbon {
+            z-index: 999;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100vw;
+            transform: translateY(-50%);
+            background: pink;
+            float: left;
+            cursor: pointer;
+        }
+
+            #ribbon .bow {
+                z-index: 999;
+                left: 50%;
+                top: 50%;
+                position: absolute;
+                width: 20rem;
+                height: 10rem;
+                background-image: url(https://pics.clipartpng.com/midle/Beautiful_Red_Bow_PNG_Clipart-518.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                transform: translate(-50%, -50%);
+                z-index: 10;
+            }
+
+                #ribbon .bow.hide {
+                    z-index: 0;
+                    transition: transform 2s ease-in-out, opacity .1s ease 2s;
+                    transform: translateY(-2000rem) rotate(360deg);
+                    opacity: 0;
+                    transform-origin: top left;
+                }
+
+            #ribbon .ribbon--r,
+            #ribbon .ribbon--l {
+                z-index: 0;
+                position: absolute;
+                background-color: #a7002c;
+                width: 50vw;
+                height: 1.5rem;
+            }
+
+            #ribbon .ribbon--r {
+                z-index: 0;
+                right: 0;
+            }
+
+                #ribbon .ribbon--r.hide {
+                    z-index: 0;
+                    transition: transform 5s ease-in-out;
+                    transform: translateX(1000rem) rotate(90deg);
+                    transform-origin: botttom right;
+                }
+
+            #ribbon .ribbon--l {
+                z-index: 0;
+                left: 0;
+            }
+
+                #ribbon .ribbon--l.hide {
+                    z-index: 0;
+                    transition: transform 5s ease-in-out;
+                    transform: translateX(-1000rem) rotate(-90deg);
+                    transform-origin: bottom left;
+                }
+
+        #imgFollow {
+            z-index: 999;
+            transform: rotate(0deg);
+            width: 5rem;
+        }
+    </style>
 </head>
 
 <body>
 
     <!-- particles.js container -->
-    <div id="particles-js"></div>
-    <a href="@Url.Action("Maharashtra", "MAP")">
-        <!-- The Modal -->
-        <div class="modal" id="overlay">
-            <div class="modal-dialog">
-                <div class="modal-content">
-
-
-                    <!-- Modal body -->
-                    <div class="modal-body">
+    <!--<div id="particles-js"></div>
+    <a href="@Url.Action("Maharashtra", "MAP")">-->
+    <!-- The Modal -->
+    <!--<div class="modal" id="overlay">
+        <div class="modal-dialog">
+            <div class="modal-content">-->
+    <!-- Modal body -->
+    <!--<div class="modal-body">
                         <img class="popupimg1" src="/Images/linkImages/abhnandanl.png" /><br>
                         <img class="popupimg2" src="/Images/linkImages/Gadchiroli-Tahsil.png" />
                     </div>
@@ -37,16 +117,51 @@
                 </div>
             </div>
         </div>
-    </a>
-
-
-
+    </a>-->
     <!-- scripts -->
-    <script src="~/js/particles.js"></script>
-    <script src="~/js/app.js"></script>
-
+    <!--<script src="~/js/particles.js"></script>
+    <script src="~/js/app.js"></script>-->
     <!-- stats.js -->
-    <script src="~/js/stats.js"></script>
+    <!--<script src="~/js/stats.js"></script>-->
+
+
+    <div id="ribbon">
+        <div class="ribbon bow"></div>
+        <div class="ribbon ribbon--l"></div>
+        <div class="ribbon ribbon--r"></div>
+    </div>
+
+    <img id="imgFollow" style="position: relative;" class="imgFollow" src="https://upload.wikimedia.org/wikipedia/commons/7/74/Scissors_icon_black.svg" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            if (localStorage.getItem('ribbonCut') != 'cut') {
+                $('.ribbon').delay(2000).fadeIn();
+                $('#imgFollow').delay(2000).fadeIn();
+            };
+
+            $(".ribbon").click(function () {
+                $(".ribbon--l").addClass("hide");
+                $(".ribbon--r").addClass("hide");
+                $(".bow").addClass("hide");
+                $("#imgFollow").hide();
+                window.location.href = "/MAP/Maharashtra";
+                localStorage.setItem('ribbonCut', 'cut')
+
+            });
+        });
+       
+        $(document).mousemove(function (e) {
+            $('#imgFollow').offset({
+                left: e.pageX + 30,
+                top: e.pageY - 20
+            });
+            $('#imgFollow').css('z-index', '1000');
+        });
+    </script>
+
 </body>
 </html>
 
