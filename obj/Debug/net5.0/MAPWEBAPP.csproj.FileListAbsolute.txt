@@ -327,4 +327,5 @@ D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\MAPWEBAPP.dll
 D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\ref\MAPWEBAPP.dll
 D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\MAPWEBAPP.pdb
 D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\MAPWEBAPP.genruntimeconfig.cache
-D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\MAPWEBAPP.csproj.AssemblyReference.cache
+D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\Razor\Views\MAP\Sangli.cshtml.g.cs
+D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\Razor\Views\MAP\Satara.cshtml.g.cs
