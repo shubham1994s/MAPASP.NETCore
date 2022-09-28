@@ -50,7 +50,7 @@
 
                 #ribbon .bow.hide {
                     z-index: 0;
-                    transition: transform 2s ease-in-out, opacity .1s ease 2s;
+                    transition: transform 10s ease-in-out, opacity .1s ease 5s;
                     transform: translateY(-2000rem) rotate(360deg);
                     opacity: 0;
                     transform-origin: top left;
@@ -72,7 +72,7 @@
 
                 #ribbon .ribbon--r.hide {
                     z-index: 0;
-                    transition: transform 5s ease-in-out;
+                    transition: transform 10s ease-in-out;
                     transform: translateX(1000rem) rotate(90deg);
                     transform-origin: botttom right;
                 }
@@ -84,7 +84,7 @@
 
                 #ribbon .ribbon--l.hide {
                     z-index: 0;
-                    transition: transform 5s ease-in-out;
+                    transition: transform 10s ease-in-out;
                     transform: translateX(-1000rem) rotate(-90deg);
                     transform-origin: bottom left;
                 }
@@ -93,6 +93,13 @@
             z-index: 999;
             transform: rotate(0deg);
             width: 5rem;
+        }
+        .bg-1 {
+            background: url(/Images/BG1.png);
+            /* height: 323px; */
+            background-position: bottom;
+            background-size: cover;
+            /* background-repeat: round;*/
         }
     </style>
 </head>
@@ -123,7 +130,13 @@
     <script src="~/js/app.js"></script>-->
     <!-- stats.js -->
     <!--<script src="~/js/stats.js"></script>-->
-
+    <header>
+        <div class="d-flex justify-content-between py-2 bg-1" style="padding-left:5%;padding-right:5%">
+            <img src="/Images/Final Azadi Ka Amrit Mahotsav_Logo.png" style="height:55px;" />
+            <img src="/Images/Embelem.png" style="height:55px;" />
+            <img src="/Images/linkImages/EK-Kdam-Logo.png" style="height:55px;" />
+        </div>
+    </header>
 
     <div id="ribbon">
         <div class="ribbon bow"></div>
@@ -152,7 +165,7 @@
 
             });
         });
-       
+
         $(document).mousemove(function (e) {
             $('#imgFollow').offset({
                 left: e.pageX + 30,
