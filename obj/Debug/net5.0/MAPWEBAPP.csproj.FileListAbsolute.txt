@@ -311,6 +311,8 @@ D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\Razor\Views\MAP\N
 D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\Razor\Views\MAP\palghar.cshtml.g.cs
 D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\Razor\Views\MAP\Parbhani.cshtml.g.cs
 D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\Razor\Views\MAP\Pune.cshtml.g.cs
+D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\Razor\Views\MAP\Sangli.cshtml.g.cs
+D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\Razor\Views\MAP\Satara.cshtml.g.cs
 D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\Razor\Views\MAP\Solapur.cshtml.g.cs
 D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\Razor\Views\MAP\Thane.cshtml.g.cs
 D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\Razor\Views\MAP\Wardha.cshtml.g.cs
@@ -327,5 +329,4 @@ D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\MAPWEBAPP.dll
 D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\ref\MAPWEBAPP.dll
 D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\MAPWEBAPP.pdb
 D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\MAPWEBAPP.genruntimeconfig.cache
-D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\Razor\Views\MAP\Sangli.cshtml.g.cs
-D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\Razor\Views\MAP\Satara.cshtml.g.cs
+D:\LiveServer\MaharashtraMapProject\MAPWEBAPP\obj\Debug\net5.0\MAPWEBAPP.csproj.AssemblyReference.cache
