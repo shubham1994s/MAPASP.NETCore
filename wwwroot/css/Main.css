@@ -1,0 +1,52 @@
+﻿
+#bg {
+    width: 100%;
+}
+
+    #bg img {
+        width: 100%;
+        height: 97vh;
+        /* margin-left: 25%;*/
+    }
+
+
+
+
+
+@media (max-width: 500px) {
+    #bg img {
+        height:100% !important;
+    }
+    canvas {
+        width: 100% !important;
+    }
+
+    .mapq {
+        width: 100% !important;
+        height:350px !important;
+    }
+    #mahamap{flex-direction:column!important}
+}
+
+
+@media (max-width: 1050px) {
+   /* #bg img {
+        height: 100% !important;
+    }
+
+    canvas {
+        width: 100% !important;
+    }
+
+    .mapq {
+        width: 100% !important;
+        height: 350px !important;
+    }*/
+
+    #mahamap {
+        flex-direction: column !important
+    }
+}
+
+
+
