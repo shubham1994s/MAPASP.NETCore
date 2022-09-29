@@ -94,6 +94,48 @@
         .popover-header {
             font-size: 75%;
         }
+        th, td {
+            border: 1px solid #aba1a1;
+            border-collapse: collapse;
+            /*   border-radius:20px;*/
+            font-size: 12px;
+            padding: 2px;
+            text-align: inherit;
+            font-weight: 600;
+            padding-left: 15px;
+            line-height: 20px
+        }
+
+        tr:nth-child(even) {
+            /* background: #94c7dfab*/
+            /* background: #dc3545a6*/
+            background: #fff
+        }
+
+        tr:nth-child(odd) {
+            /* background: #FFF*/
+            /*background: #e7a6a6f2*/
+            background: #fff;
+        }
+
+        #head {
+            /* background: #3db5f1;*/
+            background: #dc3545;
+            color: #fff;
+        }
+
+        /*td:hover {*/
+        /*background: #48bbf5;*/
+        /*background: #e94747
+        }*/
+
+        td a {
+            color: #000
+        }
+
+            td a:hover {
+                color: #000
+            }
 
         .bg-1 {
             background: url(/Images/BG1.png);
@@ -115,53 +157,99 @@
             <img src="/Images/linkImages/EK-Kdam-Logo.png" style="height:55px;" />
         </div>
     </header>
-    <div class="d-flex">
+    <div class="d-flex mt-2 ml-3">
         <!-- Count List -->
         @*<div class="mr-5">
-                <div class="border border-dark1 ml-4 mt-5 rounded">
-                    <h5>Total Wardha Property</h5>
+            <div class="border border-dark1 ml-4 mt-5 rounded">
+                <h5>Total Wardha Property</h5>
 
-                    <ul class="list-group">
-                        <li class="list-group-item head-color">Total House Count Count</li>
-                        <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.TotalHouse</li>
-                        <li class="list-group-item head-color">Total Liquid Count</li>
-                        <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalLiquid</li>
-                        <li class="list-group-item head-color">Total Street Count</li>
-                        <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalStreet</li>
-                        <li class="list-group-item head-color">Total Dump Count</li>
-                        <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalDump</li>
-                    </ul>
+                <ul class="list-group">
+                    <li class="list-group-item head-color">Total House Count Count</li>
+                    <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.TotalHouse</li>
+                    <li class="list-group-item head-color">Total Liquid Count</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalLiquid</li>
+                    <li class="list-group-item head-color">Total Street Count</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalStreet</li>
+                    <li class="list-group-item head-color">Total Dump Count</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalDump</li>
+                </ul>
 
-                </div>
-            </div>*@
+            </div>
+        </div>*@
         <!-- ImageMap Start -->
         <div class="border border-dark rounded">
             <h4 class="text-center mx-0 bg-danger text-white mb-0"> Map of Wardha</h4>
             <img src="/Images/GadchiroliMap/wardha-tehsil-map.jpg" usemap="#image-map" id="img_ID" class="map" style="width: 100%;">
 
             <map name="image-map" id="map_ID">
-                <area target="new" id="3093" alt="" title="" href="https://ictsbm.com/?returnUrl=hinganghatwaste@ulb.com&Type=W" coords="338,544,350,542,357,534,370,535,376,538,379,530,389,525,400,522,408,524,415,519,421,516,413,505,413,493,421,497,433,497,443,498,450,500,452,494,452,486,459,480,467,473,478,473,474,461,479,452,489,453,501,458,503,464,499,471,504,478,511,476,513,467,524,469,530,474,538,480,541,486,546,482,551,487,556,498,559,510,562,518,569,522,576,526,584,533,584,543,582,553,577,562,576,574,579,583,569,586,561,586,553,586,548,581,542,584,535,589,529,589,520,585,515,586,518,593,521,600,514,604,506,604,504,614,505,627,508,640,509,647,501,652,492,656,490,666,481,662,468,664,460,664,454,659,445,655,439,654,441,646,445,635,438,629,430,625,427,616,422,610,417,607,414,600,411,593,404,590,405,583,398,582,392,582,386,576,385,583,377,585,364,584,352,572,343,561,344,551" shape="poly">
-                <area target="new" id="3092" alt="" title="" href="https://ictsbm.com/?returnUrl=arviwaste@ulb.com&Type=W" coords="130,204,139,202,146,203,152,198,159,199,166,195,166,186,175,179,184,175,182,190,190,188,189,202,190,213,196,214,204,208,207,202,210,196,218,195,223,190,231,193,242,195,248,202,259,205,270,202,284,201,285,209,287,216,291,222,285,228,277,231,269,231,263,222,258,223,255,230,251,235,253,247,259,255,265,265,269,252,272,257,275,265,279,250,286,253,294,259,301,263,313,264,315,255,322,254,328,242,336,246,336,252,340,258,343,265,347,273,351,268,359,269,368,269,376,272,376,279,372,286,364,282,354,283,357,289,365,295,362,300,363,309,352,309,345,310,329,315,324,320,322,332,319,338,309,337,302,339,304,347,303,354,295,361,286,361,277,361,277,369,272,372,269,383,263,383,262,393,252,396,243,389,218,392,209,380,213,361,223,354,217,345,208,350,208,341,199,338,200,328,192,321,181,313,169,301,162,306,154,305,146,298,138,279,127,275,129,255,122,243,129,234,122,223,132,214" shape="poly">
-                <area target="new" id="3087" alt="" title="" href="https://ictsbm.com/?returnUrl=wardhawaste@ulb.com&Type=W" coords="345,309,326,315,323,335,317,338,307,338,303,343,304,352,302,359,295,363,284,360,279,361,277,368,271,372,271,386,263,386,262,399,266,405,267,411,280,413,285,421,291,426,299,424,300,416,306,415,314,420,311,425,306,434,310,439,319,441,327,446,329,453,335,459,326,462,327,468,346,468,355,477,374,482,382,487,389,490,391,484,401,486,412,493,417,498,428,497,436,499,451,499,452,485,463,476,473,473,474,466,472,459,479,451,488,453,503,460,509,449,505,441,495,433,486,430,476,430,466,425,456,412,453,412,446,422,444,414,449,401,439,395,432,395,429,383,427,366,421,374,417,364,412,368,406,359,401,360,398,365,392,367,384,366,379,367,375,362,367,363,358,352,365,345,357,339,357,329,353,321,346,317" shape="poly">
+                <area target="_blank" alt="Ashti" title="Ashti" href="https://ictsbm.com/?returnUrl=ashtiwaste@ulb.com&Type=W" coords="87,37,98,35,108,37,120,42,130,43,133,49,142,50,153,51,167,49,175,52,185,52,197,58,206,66,211,70,221,73,218,82,211,84,210,91,211,102,218,106,221,114,221,121,214,118,203,118,198,121,194,129,190,136,196,141,196,148,189,150,176,148,180,154,189,159,196,166,203,178,198,183,201,188,202,194,207,200,205,209,199,217,191,213,192,205,189,196,189,189,182,193,183,179,177,177,172,180,166,183,167,194,163,199,154,199,151,204,142,203,134,206,129,194,127,185,120,184,121,176,127,167,120,161,112,151,98,140,101,133,95,123,91,119,85,117,86,107,79,103,75,98,80,83,88,83,90,75,85,72,85,63,90,56,90,48" shape="poly">
+                <area target="_blank" id="3093" alt="" title="" href="https://ictsbm.com/?returnUrl=hinganghatwaste@ulb.com&Type=W" coords="338,544,350,542,357,534,370,535,376,538,379,530,389,525,400,522,408,524,415,519,421,516,413,505,413,493,421,497,433,497,443,498,450,500,452,494,452,486,459,480,467,473,478,473,474,461,479,452,489,453,501,458,503,464,499,471,504,478,511,476,513,467,524,469,530,474,538,480,541,486,546,482,551,487,556,498,559,510,562,518,569,522,576,526,584,533,584,543,582,553,577,562,576,574,579,583,569,586,561,586,553,586,548,581,542,584,535,589,529,589,520,585,515,586,518,593,521,600,514,604,506,604,504,614,505,627,508,640,509,647,501,652,492,656,490,666,481,662,468,664,460,664,454,659,445,655,439,654,441,646,445,635,438,629,430,625,427,616,422,610,417,607,414,600,411,593,404,590,405,583,398,582,392,582,386,576,385,583,377,585,364,584,352,572,343,561,344,551" shape="poly">
+                <area target="_blank" id="3092" alt="" title="" href="https://ictsbm.com/?returnUrl=arviwaste@ulb.com&Type=W" coords="130,204,139,202,146,203,152,198,159,199,166,195,166,186,175,179,184,175,182,190,190,188,189,202,190,213,196,214,204,208,207,202,210,196,218,195,223,190,231,193,242,195,248,202,259,205,270,202,284,201,285,209,287,216,291,222,285,228,277,231,269,231,263,222,258,223,255,230,251,235,253,247,259,255,265,265,269,252,272,257,275,265,279,250,286,253,294,259,301,263,313,264,315,255,322,254,328,242,336,246,336,252,340,258,343,265,347,273,351,268,359,269,368,269,376,272,376,279,372,286,364,282,354,283,357,289,365,295,362,300,363,309,352,309,345,310,329,315,324,320,322,332,319,338,309,337,302,339,304,347,303,354,295,361,286,361,277,361,277,369,272,372,269,383,263,383,262,393,252,396,243,389,218,392,209,380,213,361,223,354,217,345,208,350,208,341,199,338,200,328,192,321,181,313,169,301,162,306,154,305,146,298,138,279,127,275,129,255,122,243,129,234,122,223,132,214" shape="poly">
+                <area target="_blank" id="3087" alt="" title="" href="https://ictsbm.com/?returnUrl=wardhawaste@ulb.com&Type=W" coords="345,309,326,315,323,335,317,338,307,338,303,343,304,352,302,359,295,363,284,360,279,361,277,368,271,372,271,386,263,386,262,399,266,405,267,411,280,413,285,421,291,426,299,424,300,416,306,415,314,420,311,425,306,434,310,439,319,441,327,446,329,453,335,459,326,462,327,468,346,468,355,477,374,482,382,487,389,490,391,484,401,486,412,493,417,498,428,497,436,499,451,499,452,485,463,476,473,473,474,466,472,459,479,451,488,453,503,460,509,449,505,441,495,433,486,430,476,430,466,425,456,412,453,412,446,422,444,414,449,401,439,395,432,395,429,383,427,366,421,374,417,364,412,368,406,359,401,360,398,365,392,367,384,366,379,367,375,362,367,363,358,352,365,345,357,339,357,329,353,321,346,317" shape="poly">
             </map>
         </div>
 
+        <div class="d-flex ml-2 justify-content-between">
+            <table style="width:100%;height:10%">
+                <tr id="head">
+                    <th colspan="3" style="border-top-left-radius: 8px; border-top-right-radius: 8px; border: none; padding-top: 5px; text-align: center"> ULBs</th>
 
+                    @*<th style="border-top-right-radius: 8px; border: none; padding-top: 5px;">Complete ULB</th>*@
+
+                </tr>
+                
+                <tr>
+                   
+
+                    <td><a target="_blank" href="https://ictsbm.com/?returnUrl=hinganghatwaste@ulb.com&Type=W">Hinganghat Nagar Parishad</a></td>
+                   
+
+
+
+                </tr>
+               
+                <tr>
+         
+                <tr>
+                    <td><a target="_blank" href="https://ictsbm.com/?returnUrl=Arviwaste@ulb.com&Type=W">Arvi Nagar Parishad</a></td>
+                   
+
+                   
+
+                </tr>
+                <tr>
+                    <td><a target="_blank" href="https://ictsbm.com/?returnUrl=Ashtiwaste@ulb.com&Type=W">Ashti Nagar Panchayat</a></td>
+                   
+
+
+                </tr>
+              
+                <tr>
+                    <td><a target="_blank" href="https://ictsbm.com/?returnUrl=wardhawaste@ulb.com&Type=W">Wardha Nagar Parishad</a></td>
+
+
+                </tr>
+                
+
+
+            </table>
+
+        </div>
         @*<div class="mr-5">
-                <div class="border border-dark1 ml-4 mt-5 rounded">
-                    <h5>Today Total Scan Wardha Property</h5>
-                    <ul class="list-group">
-                        <li class="list-group-item head-color">Today Scan House Count</li>
-                        <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.TotalHouseScan</li>
-                        <li class="list-group-item head-color">Today Scan Liquid Count</li>
-                        <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i> @Model.TotalLiquidScan</li>
-                        <li class="list-group-item head-color">Today Scan Street Count</li>
-                        <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalStreetScan</li>
-                        <li class="list-group-item head-color">Today Scan Dump Count</li>
-                        <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i> @Model.TotalDumpScan</li>
-                    </ul>
-                </div>
-            </div>*@
+            <div class="border border-dark1 ml-4 mt-5 rounded">
+                <h5>Today Total Scan Wardha Property</h5>
+                <ul class="list-group">
+                    <li class="list-group-item head-color">Today Scan House Count</li>
+                    <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.TotalHouseScan</li>
+                    <li class="list-group-item head-color">Today Scan Liquid Count</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i> @Model.TotalLiquidScan</li>
+                    <li class="list-group-item head-color">Today Scan Street Count</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalStreetScan</li>
+                    <li class="list-group-item head-color">Today Scan Dump Count</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i> @Model.TotalDumpScan</li>
+                </ul>
+            </div>
+        </div>*@
     </div>
 
 

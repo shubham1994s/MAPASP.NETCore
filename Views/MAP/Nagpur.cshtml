@@ -104,6 +104,48 @@
             /* background-repeat: round;*/
         }
         /*  .sec td{line-height:8px !important}*/
+        th, td {
+            border: 1px solid #aba1a1;
+            border-collapse: collapse;
+            /*   border-radius:20px;*/
+            font-size: 12px;
+            padding: 2px;
+            text-align: inherit;
+            font-weight: 600;
+            padding-left: 15px;
+            line-height: 20px
+        }
+
+        tr:nth-child(even) {
+            /* background: #94c7dfab*/
+            /* background: #dc3545a6*/
+            background: #fff
+        }
+
+        tr:nth-child(odd) {
+            /* background: #FFF*/
+            /*background: #e7a6a6f2*/
+            background: #fff;
+        }
+
+        #head {
+            /* background: #3db5f1;*/
+            background: #dc3545;
+            color: #fff;
+        }
+
+        /*td:hover {*/
+        /*background: #48bbf5;*/
+        /*background: #e94747
+        }*/
+
+        td a {
+            color: #000
+        }
+
+            td a:hover {
+                color: #000
+            }
     </style>
 </head>
 
@@ -116,25 +158,25 @@
             <img src="/Images/linkImages/EK-Kdam-Logo.png" style="height:55px;" />
         </div>
     </header>
-    <div class="d-flex">
+    <div class="d-flex mt-2 ml-3">
         <!-- Count List -->
         @*<div class="mr-5">
-                <div class="border border-dark1 ml-4 mt-5 rounded">
-                    <h5>Total Nagpur Property</h5>
+            <div class="border border-dark1 ml-4 mt-5 rounded">
+                <h5>Total Nagpur Property</h5>
 
-                    <ul class="list-group">
-                        <li class="list-group-item head-color">Total House Count Count</li>
-                        <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.TotalHouse</li>
-                        <li class="list-group-item head-color">Total Liquid Count</li>
-                        <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalLiquid</li>
-                        <li class="list-group-item head-color">Total Street Count</li>
-                        <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalStreet</li>
-                        <li class="list-group-item head-color">Total Dump Count</li>
-                        <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalDump</li>
-                    </ul>
+                <ul class="list-group">
+                    <li class="list-group-item head-color">Total House Count Count</li>
+                    <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.TotalHouse</li>
+                    <li class="list-group-item head-color">Total Liquid Count</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalLiquid</li>
+                    <li class="list-group-item head-color">Total Street Count</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalStreet</li>
+                    <li class="list-group-item head-color">Total Dump Count</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalDump</li>
+                </ul>
 
-                </div>
-            </div>*@
+            </div>
+        </div>*@
         <!-- ImageMap Start -->
         <div class="border border-dark rounded">
             <h4 class="text-center mx-0 bg-danger text-white mb-0"> Map of Nagpur</h4>
@@ -150,23 +192,72 @@
 
             </map>
         </div>
+        <div class="d-flex ml-2 justify-content-between">
+            <table style="width:100%;height:40%">
+                <tr id="head">
+                    <th colspan="3" style="border-top-left-radius: 8px; border-top-right-radius: 8px; border: none; padding-top: 5px;text-align:center"> ULBs</th>
 
+                    @*<th style="border-top-right-radius: 8px; border: none; padding-top: 5px;">Complete ULB</th>*@
+
+                </tr>
+               
+                <tr>
+                   
+                    <td><a target="_blank" href="https://nagpur.ictsbm.com/?returnUrl=nagpurwaste@ulb.com&Type=W">Nagpur Mahanagar Palika</a></td>
+
+
+
+                </tr>
+                <tr>
+                  
+                    <td><a target="_blank" href="https://ictsbm.com/?returnUrl=hingnawaste@ulb.com&Type=W">Hingna Nagar Panchayat</a></td>
+
+
+                    
+
+
+
+                </tr>
+               
+                <tr>
+                   
+                    <td><a target="_blank" href="https://ictsbm.com/?returnUrl=kalmeshwar-brahmaniwaste@ulb.com&Type=W">Kalmeshwar-Brahmani Nagar Parishad</a></td>
+                    
+
+
+
+
+                </tr>
+               
+                <tr>
+                 
+                    <td><a target="_blank" href="https://ictsbm.com/?returnUrl=moudawaste@ulb.com&Type=W">Mouda Nagar Pancahyat</a></td>
+
+
+
+                </tr>
+                
+
+
+            </table>
+         
+        </div>
 
         @*<div class="mr-5">
-                <div class="border border-dark1 ml-4 mt-5 rounded">
-                    <h5>Today Total Scan Nagpur Property</h5>
-                    <ul class="list-group">
-                        <li class="list-group-item head-color">Today Scan House Count</li>
-                        <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.TotalHouseScan</li>
-                        <li class="list-group-item head-color">Today Scan Liquid Count</li>
-                        <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i> @Model.TotalLiquidScan</li>
-                        <li class="list-group-item head-color">Today Scan Street Count</li>
-                        <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalStreetScan</li>
-                        <li class="list-group-item head-color">Today Scan Dump Count</li>
-                        <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i> @Model.TotalDumpScan</li>
-                    </ul>
-                </div>
-            </div>*@
+            <div class="border border-dark1 ml-4 mt-5 rounded">
+                <h5>Today Total Scan Nagpur Property</h5>
+                <ul class="list-group">
+                    <li class="list-group-item head-color">Today Scan House Count</li>
+                    <li class="list-group-item count-color"> <i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>  @Model.TotalHouseScan</li>
+                    <li class="list-group-item head-color">Today Scan Liquid Count</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i> @Model.TotalLiquidScan</li>
+                    <li class="list-group-item head-color">Today Scan Street Count</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i>@Model.TotalStreetScan</li>
+                    <li class="list-group-item head-color">Today Scan Dump Count</li>
+                    <li class="list-group-item count-color"><i class="fa-solid fa-caret-right" style="margin-right: 15%;"></i> @Model.TotalDumpScan</li>
+                </ul>
+            </div>
+        </div>*@
     </div>
 
 
