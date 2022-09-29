@@ -21,6 +21,7 @@
     <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
           rel="stylesheet">
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link href="~/css/Main.css" rel="stylesheet" />
     <link href="~/css/tooltip.css" rel="stylesheet" />
     @*<script type="text/javascript">
 
@@ -218,6 +219,9 @@
             background-size: cover;
             /* background-repeat: round;*/
         }
+
+       /* canvas{width:100%!important;}
+        .mapq{width:100%!important}*/
       /*  .sec td{line-height:8px !important}*/
     </style>
 </head>
@@ -225,13 +229,13 @@
 <body>
 
 <header>
-    <div class="d-flex justify-content-between py-2 bg-1" style="padding-left:5%;padding-right:5%">
+    <div class="d-flex justify-content-between py-2 bg-1" style="padding-left:5%;padding-right:5%" >
         <img src="/Images/Final Azadi Ka Amrit Mahotsav_Logo.png" style="height:55px;" />
         <img src="/Images/Embelem.png" style="height:55px;" />
         <img src="/Images/linkImages/EK-Kdam-Logo.png" style="height:55px;" />
     </div>
 </header>
-    <div class="d-flex mt-2">
+    <div class="d-flex mt-2"id="mahamap">
         <!-- Count List -->
 
         @*<div class="mr-5">
