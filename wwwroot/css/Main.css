@@ -1,11 +1,15 @@
 ﻿
+body{margin:0px}
+
+
+
 #bg {
     width: 100%;
 }
 
     #bg img {
         width: 100%;
-        height: 97vh;
+        height: 100vh;
         /* margin-left: 25%;*/
     }
 
@@ -25,7 +29,11 @@
         width: 100% !important;
         height:350px !important;
     }
-    #mahamap{flex-direction:column!important}
+    .map {
+        width: 100% !important;
+        height: 420px !important;
+    }
+    #mahamap{flex-direction:column!important;margin-left:0px!important}
 }
 
 
